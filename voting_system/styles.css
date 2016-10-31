@@ -1,0 +1,93 @@
+* {
+  --main-bg-color: #BFD4D9;;
+  --jumbotron-bg-color: #638CA6;
+  --main-body-font-color: black;
+  --main-form-bg-color: #ffffff;
+  --index-button-bg-color: #005188;
+}
+
+body {
+  background-color: var(--main-bg-color);
+}
+
+.text_box {
+	padding: 2%;
+}
+
+.form_full {
+	padding: 5%;
+	background-color: var(--main-form-bg-color);
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.entry_choice {
+  margin-top: 12%;
+  padding: 5%;
+  background-color: var(--main-form-bg-color);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.jumbotron {
+    /*background-color: #f4511e; */ /* Orange */
+    background-color: var(--jumbotron-bg-color);
+    color: #ffffff;
+}
+
+.padding_main {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.center_div {
+    text-align: center;
+}
+
+.sub_but{
+  
+}
+
+/* The styles for the main entry page buttons (index.php) */
+.mButton {
+  display: inline-block;
+  border-radius: 20px;
+  background-color: var(--index-button-bg-color);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 26px;
+  padding: 20px;
+  width: 95%;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  height: 80px;
+  text-decoration: none;
+}
+
+.mButton span {
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.mButton:hover {
+  background-color: #9ccae7;
+  text-decoration: none;
+}
+
+.mButton span:after {
+  transition: 0.5s;
+}
+
+.mButton:hover span {
+  padding: 0px;
+  text-decoration: none;
+}
+
+.mButton:hover span:after {
+  opacity: 1;
+  right: 0;
+  text-decoration: none;
+}

@@ -1,0 +1,20 @@
+You must have a server with php running to use these files. I use a basic lamp install and run something like:
+<<<<<<< HEAD
+=======
+
+sudo /opt/lampp/lampp start
+>>>>>>> 441c4f96c687898af969860d3e5846d964b4d289
+
+$ sudo /opt/lampp/lampp start
+
+At the bare minimum, you need an apache server with the files of this repository placed in the htdocs folder.
+If you just have an apache server (without lamp), then you will run something like:
+
+$ sudo service apache2 start
+(or whatever)
+
+The first file file will be entitled "index.php," so you should be able to follow the flow of the page by starting there.
+
+Once you have the voting_system folder in your htdoc folder and have apache running, you can go to a browers and go to the url:
+
+http://localhost/voting_system/index.php
