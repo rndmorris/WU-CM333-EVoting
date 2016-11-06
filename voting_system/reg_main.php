@@ -93,48 +93,44 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">*First Name:</label>
       <div class="col-sm-10">
-        <input type="fname" class="form-control" id="fname" name='fname' 
+        <input type="fname" class="form-control" id="fname" name='fname' placeholder="Enter first name"
           <?php   if (isset($_SESSION['ses_fname'])){
           echo 'value="', $_SESSION['ses_fname'], '"';
           echo " ";
           }?>
-        placeholder="Enter first name">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="mname">Middle Name:</label>
+      <label class="control-label col-sm-2" for="mname">Middle Name:</label> 
       <div class="col-sm-10">
-        <input type="m_name" class="form-control" id="m_name" name='mname' 
+        <input type="m_name" class="form-control" id="m_name" name='mname' placeholder="Enter middle name"
           <?php   if (isset($_SESSION['ses_mname'])){
           echo 'value="', $_SESSION['ses_mname'], '"';
           echo " ";
           }?>
-        placeholder="Enter middle name">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="lname">*Last Name:</label>
       <div class="col-sm-10">
-        <input type="lname" class="form-control" id="lname" name='lname' 
+        <input type="lname" class="form-control" id="lname" name='lname' placeholder="Enter last name"
           <?php   if (isset($_SESSION['ses_lname'])){
           echo 'value="', $_SESSION['ses_lname'], '"';
           echo " ";
           }?>
-        placeholder="Enter last name">
       </div>
     </div>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="n_suf">Name Suffix:</label>
       <div class="col-sm-10">
-        <input type="n_suf" class="form-control" id="n_suf" name="n_suf" 
+        <input type="n_suf" class="form-control" id="n_suf" name="n_suf" placeholder="Enter name suffix"
           <?php   if (isset($_SESSION['ses_n_suf'])){
           echo 'value="', $_SESSION['ses_n_suf'], '"';
           echo " ";
           }?>
-        placeholder="Enter name suffix">
       </div>
     </div>
     <br>
@@ -149,12 +145,11 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="dob">*Date of Birth (MM/DD/YYYY):</label>
       <div class="col-sm-10">
-        <input type="dob" class="form-control" id="dob" name="dob" 
+        <input type="dob" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MM/DD/YYYY)"
           <?php   if (isset($_SESSION['ses_dob'])){
           echo 'value="', $_SESSION['ses_dob'], '"';
           echo " ";
           }?>
-        placeholder="Enter date of birth (MM/DD/YYYY)">
       </div>
     </div>
     <br>
