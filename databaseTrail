@@ -1,0 +1,55 @@
+import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class DatabaseTrail
+  { public static void main(String args[])
+          throws SQLException
+    { String user = "";
+      String pass = "";
+      int attempts = 0;
+      Connection con = null;
+      Statement st = null;
+      ResultSet rs = null;
+      Scanner input = new Scanner(System.in);
+      String url = "jdbc:mysql://localhost:3306/Parking_Garage"; 
+      System.out.print("User: ");
+      user = input.nextLine();
+      System.out.print("Pass: ");
+      pass = input.nextLine();
+      
+      do {
+           try{  con = DriverManager.getConnection(url, user, pass); }
+           catch (Exception ex)
+            { System.out.println(ex);
+              attempts++;
+              if (attempts >= 3)
+                {System.out.println("Too many errors");
+                 System.exit(0); }
+              }
+          if(attempts < 3)
+           {//System.out.println("connected");
+            break;}
+           }while(attempts <3);
+      
+      if(attempts <= 3)
+        { System.out.println("Execute a query."); }
+      
+      String query = "show databases;";
+      System.out.println("Execute show databases;");
+      
+      try { st = con.createStatement(ResultSet.FETCH_UNKNOWN,
+                                      ResultSet.TYPE_SCROLL_INSENSITIVE);
+            rs = st.executeQuery(query);
+            while (rs.next())
+             { String s = rs.getString(1);
+               System.out.println(s + "\r");
+              }
+           }
+         catch (Exception ex)
+         { System.out.println(ex); }
+    }
+}
