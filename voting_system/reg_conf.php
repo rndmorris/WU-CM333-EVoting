@@ -29,6 +29,12 @@
       $_SESSION['ses_mname'] = $_POST['mname'];
       $_SESSION['ses_lname'] = $_POST['lname'];
       $_SESSION['ses_dob'] = $_POST['dob'];
+
+    if (isset($_POST['cit']))  { $_SESSION['ses_cit'] = $_POST['cit']; }
+    if (isset($_POST['kan_res']))  { $_SESSION['ses_kan_res'] = $_POST['kan_res']; }
+    if (isset($_POST['fel']))    { $_SESSION['ses_fel'] = $_POST['fel'];   }
+    if (isset($_POST['age']))    { $_SESSION['ses_age'] = $_POST['age'];   }
+
   ?>
 
 </head>
@@ -37,13 +43,19 @@
 
 	<div class="jumbotron text-center">
   <h1>Voter Registration</h1>
-  <p>Is this really what you meant, stupid?</p>
+    <p>Is this really what you meant, stupid?</p>
   </div>
 
   <br>
 
   <div class="form_full">
       <?php
+
+      echo '<div class="form-group">
+      <label class="control-label col-sm-2">Citizen</label>
+      <div class="col-sm-10">';
+      echo '  ', $_SESSION['ses_cit'];
+      echo '</div></div><br>';
 
       echo '<div class="form-group">
       <label class="control-label col-sm-2">Surname:</label>

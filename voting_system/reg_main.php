@@ -26,13 +26,13 @@
     <div id="panel1">
       <?php
         session_start();
-        $_SESSION['type_reg'] = true;
+/*        $_SESSION['type_reg'] = true;
         if ($_SESSION['type_reg'] == false){
           header("Location: http://localhost/vote/voting_main_php.php");
           //header("Location: http://www.google.com");
         exit;
         }
-        print session_id();
+        print session_id();*/
       ?>
     </div>
 
@@ -47,35 +47,35 @@
     <div class="form-group">
     	<label class="control-label col-sm-6" for="citizen">1. Are you a citizen of the United States of America?</label>
     	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="cit_Y">Yes</label>
-  	   <label class="radio-inline"><input type="radio" name="cit_N">No</label>
+   	    <label class="radio-inline"><input type="radio" name="cit" value="cit_yes">Yes</label>
+  	   <label class="radio-inline"><input type="radio" name="cit" value="cit_yes">No</label>
   	  </div>
     </div>
 
     <div class="form-group">
     	<label class="control-label col-sm-6" for="age">2. Will you be 18 years of age on or before election day?</label>
     	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="age_Y">Yes</label>
-  	    <label class="radio-inline"><input type="radio" name="age_N">No</label>
+   	    <label class="radio-inline"><input type="radio" name="age" value="age_yes">Yes</label>
+  	    <label class="radio-inline"><input type="radio" name="age" value="age_no">No</label>
   	  </div>
     </div>
 
     <div class="form-group">
     	<label class="control-label col-sm-6" for="kan_res">3. Are you a resident of Kansas?</label>
     	 <div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="kan_res_y">Yes</label>
-  	    <label class="radio-inline"><input type="radio" name="kan_res_n">No</label>
+   	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_yes">Yes</label>
+  	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_no">No</label>
   	   </div>
     </div>
 
     <div class="form-group">
     	<label class="control-label col-sm-6" for="fel">4. Felony Conviction - Please Choose One:</label>
     	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="fel_1">I have never been convicted of a felony.</label>
+   	    <label class="radio-inline"><input type="radio" name="fel" value="fel_never">I have never been convicted of a felony.</label>
    	    <br>
-  	     <label class="radio-inline"><input type="radio" name="fel_2">I have been convicted of a felony. All the terms of my sentence have been completed and my rights have been restored.</label>
+  	     <label class="radio-inline"><input type="radio" name="fel" value="fel_rest">I have been convicted of a felony. All the terms of my sentence have been completed and my rights have been restored.</label>
   	     <br>
-  	     <label class="radio-inline"><input type="radio" name="fel_3">I am currently under sentence for a felony.</label>
+  	     <label class="radio-inline"><input type="radio" name="fel" value="fel_yes">I am currently under sentence for a felony.</label>
   	     <br>
       </div>
     </div>
@@ -97,18 +97,18 @@
           <?php   if (isset($_SESSION['ses_fname'])){
           echo 'value="', $_SESSION['ses_fname'], '"';
           echo " ";
-          }?>
+          }?>>
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for="mname">Middle Name:</label> 
+      <label class="control-label col-sm-2" for="mname">Middle Name:</label>
       <div class="col-sm-10">
         <input type="m_name" class="form-control" id="m_name" name='mname' placeholder="Enter middle name"
           <?php   if (isset($_SESSION['ses_mname'])){
           echo 'value="', $_SESSION['ses_mname'], '"';
           echo " ";
-          }?>
+          }?>>
       </div>
     </div>
 
@@ -119,7 +119,7 @@
           <?php   if (isset($_SESSION['ses_lname'])){
           echo 'value="', $_SESSION['ses_lname'], '"';
           echo " ";
-          }?>
+          }?>>
       </div>
     </div>
 
@@ -130,7 +130,7 @@
           <?php   if (isset($_SESSION['ses_n_suf'])){
           echo 'value="', $_SESSION['ses_n_suf'], '"';
           echo " ";
-          }?>
+          }?>>
       </div>
     </div>
     <br>
@@ -149,7 +149,7 @@
           <?php   if (isset($_SESSION['ses_dob'])){
           echo 'value="', $_SESSION['ses_dob'], '"';
           echo " ";
-          }?>
+          }?>>
       </div>
     </div>
     <br>
