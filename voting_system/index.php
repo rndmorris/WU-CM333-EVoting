@@ -14,11 +14,25 @@
   <?php 
     session_start();
 
-    if (isset($_SESSION['ses_n_suf']))  { unset($_SESSION['ses_n_suf']); }
-    if (isset($_SESSION['ses_fname']))  { unset($_SESSION['ses_fname']); }
-    if (isset($_SESSION['ses_mname']))  { unset($_SESSION['ses_mname']); }
-    if (isset($_SESSION['ses_lname']))  { unset($_SESSION['ses_lname']); }
-    if (isset($_SESSION['ses_dob']))    { unset($_SESSION['ses_dob']);   }
+    if (isset($_SESSION['ses_cit']))        { unset($_SESSION['ses_cit']);      }
+    if (isset($_SESSION['ses_kan_res']))    { unset($_SESSION['ses_kan_res']);  }
+    if (isset($_SESSION['ses_fel']))        { unset($_SESSION['ses_fel']);      }
+    if (isset($_SESSION['ses_age']))        { unset($_SESSION['ses_age']);      }
+
+    if (isset($_SESSION['ses_n_suf']))      { unset($_SESSION['ses_n_suf']);    }
+    if (isset($_SESSION['ses_fname']))      { unset($_SESSION['ses_fname']);    }
+    if (isset($_SESSION['ses_mname']))      { unset($_SESSION['ses_mname']);    }
+    if (isset($_SESSION['ses_lname']))      { unset($_SESSION['ses_lname']);    }
+    if (isset($_SESSION['ses_dob']))        { unset($_SESSION['ses_dob']);      }
+
+    if (isset($_SESSION['ses_dl_num']))     { unset($_SESSION['ses_dl_num']);   }
+    if (isset($_SESSION['ses_dl_iss']))     { unset($_SESSION['ses_dl_iss']);   }
+    if (isset($_SESSION['ses_dl_exp']))     { unset($_SESSION['ses_dl_exp']);   }
+    if (isset($_SESSION['ses_dl_add']))     { unset($_SESSION['ses_dl_add']);   }
+
+    if (isset($_SESSION['ses_curr_add']))   { unset($_SESSION['ses_curr_add']); }
+    if (isset($_SESSION['ses_tele']))       { unset($_SESSION['ses_tele']);     }
+    if (isset($_SESSION['ses_email']))      { unset($_SESSION['ses_email']);    }
     
   ?>
 
