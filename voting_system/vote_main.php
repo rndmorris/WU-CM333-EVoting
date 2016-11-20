@@ -13,6 +13,30 @@
 
   <?php 
     session_start();
+    if(isset($_POST['vID'])) { 
+    	$_SESSION['ses_vID'] = $_POST['vID']; 
+    }
+
+    $district = 0;
+
+    if($_SESSION['ses_vID'] >= 00000000 && $_SESSION['ses_vID'] <= 25000000) {
+    	$district = 0;
+    	$_SESSION['district'] = 0;
+    }
+    if($_SESSION['ses_vID'] >= 25000001 && $_SESSION['ses_vID'] <= 50000000) {
+    	$district = 1;
+    	$_SESSION['district'] = 1;
+    }
+    if($_SESSION['ses_vID'] >= 50000001 && $_SESSION['ses_vID'] <= 75000000) {
+    	$district = 2;
+    	$_SESSION['district'] = 2;
+    }
+    if($_SESSION['ses_vID'] >= 75000001 && $_SESSION['ses_vID'] <= 99999999) {
+    	$district = 3;
+    	$_SESSION['district'] = 3;
+    }
+    //i
+
   ?>
 
 </head>
@@ -31,7 +55,7 @@
   	//include 'example.php';
     //session_start();
 
-    $district = 0;
+
     //if from 00000000 > 25000000
     // $district = 1
     //if from 25000001 > 50000000
@@ -84,6 +108,7 @@
     		echo '<label class="control-label col-sm-12" for="';
     		echo $raceID;
     		echo '"></label>';
+    		$val = strval($raceID);
     				echo '<div class="col-sm-12">';
 					echo '<div id="race_div">';
 				    echo 'Race: ';
@@ -109,12 +134,54 @@
 					    echo $raceID;
 					    echo '" value="';
 					    echo $canID;
-					    echo '"></label>';
+					    echo '"';
+
+					    if(isset($_SESSION[$val])) {
+					    	  if(strcmp($_SESSION[$val], $canID) == 0) {
+              				  echo 'checked="checked"';
+            					}
+					    }
+					    echo '></label>';
 					    echo '<br><br><br>';
 					}
-					echo "<br><br>";
-					echo "</div>";
+					$write_in = $xml->ballot[$district]->scopes->scope[$scope]->races->race[$race]->write_in;
+					if(strcmp($write_in, 'yes') == 0){
+
+					echo '<div class="form-group">';
+					echo '<label class="control-label col-sm-2" for="';
+					echo $raceID;
+					echo '">Write-In Canidate:</label>';
+					echo '<div class="col-sm-4">';
+					echo '<input type="radio" class="form-control" name="';
+					echo  $raceID;
+					echo '" value="';
+					echo 'wi_'.$raceID;
+					echo '"';
+					$j = strval($raceID);
+					$str = 'wi_'.$j;
+					if(isset($_SESSION[$str])) {
+						echo 'checked="checked"';
+					}
+					echo '>';
+
 					echo '</div>';
+					echo '<div class="col-sm-6">';
+					echo '<input type="text" class="form-control" name="';
+					echo 'wi_', $raceID;
+					echo '" id="';
+					echo 'wi_', $raceID;
+					echo '" placeholder="Enter Write-In Here"';
+					if(isset($_SESSION[$str])) {
+					 	echo 'value="';
+					 	echo $_SESSION[$str];
+					 	echo '"';
+					}
+					echo '>';
+					echo '</div>';
+					echo '</div><br><br>';
+
+
+					}
 					
 					echo '-----------------------------------------------';
 					echo '<br><br>';

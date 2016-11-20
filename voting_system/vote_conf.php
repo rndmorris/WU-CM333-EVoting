@@ -22,6 +22,27 @@
         exit;
       }
 
+      for($k = 0; $k < 100; $k++){
+           $j = strval($k);
+           $j = 'wi_r'.$j;
+           $t = strval($k);
+           $t = "r".$t;
+           echo $j;
+           if(isset($_POST[$j])){
+             if(!strcmp($_POST[$j], "") == 0){
+                echo '    ', $_POST[$j];
+                $_POST[$t] = $_POST[$j];
+                $_SESSION[$j] = $_POST[$j];
+                }
+              else{
+                unset($_SESSION[$j]);
+                unset($_POST[$j]);
+              }
+            }
+      }
+
+      $district = $_SESSION['district'];
+
      /*THIS PART TAKES THE POST VARIABLES AND SAVES THEM AS SESSION VARIABLES*/
 
 
@@ -53,7 +74,6 @@
       	echo '<br>';
 
       		/*DO THIS FOR REAL*/
-      	    $district = 0;
       	    $scope = 0;
 
 
@@ -72,7 +92,8 @@
      		/*echo 'IN IF';
      		echo $_POST[$r];*/
      		$_SESSION[$r] = $_POST[$r];
-     		/*echo $_SESSION[$r];*/
+     		echo $_SESSION[$r];
+        echo "   ", $r;
      		$raceCnt2 = $xml->ballot[$district]->scopes->scope[$scope]->races->race->count();
 
      		for($t = 0; $t < $raceCnt2; $t++)
@@ -94,6 +115,8 @@
      					}
      				}
      			}
+
+
      		}
      		/*echo xml_attribute($xml->ballot[$district]->scopes->scope[$scope]->races->race[$r]->candidate, $_SESSION[$r]);*/
      		/*$name = $xml->ballot[$district]->scopes->scope[$scope]->races->race[$r]->candidate->id[$_SESSION[$r]]->name;*/

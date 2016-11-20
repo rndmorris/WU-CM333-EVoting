@@ -11,30 +11,30 @@
           <race>
             <race_name>President</race_name>
             <race_id>r1</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Ms. Coder</name>
-              <id>c1</id>
+              <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Shannon Hoffman</name>
-              <id>c2</id>
+              <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
           <race>
             <race_name>Senate</race_name>
             <race_id>r2</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Joe Blow</name>
-              <id>c3</id>
+              <id>_c3</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Dr. Bill</name>
-              <id>c4</id>
+              <id>_c4</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
@@ -53,30 +53,30 @@
           <race>
             <race_name>President</race_name>
             <race_id>r1</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Ms. Coder</name>
-              <id>c1</id>
+              <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Shannon Hoffman</name>
-              <id>c2</id>
+              <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
           <race>
             <race_name>Senate</race_name>
             <race_id>r2</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Joe Blow</name>
-              <id>c3</id>
+              <id>_c3</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Dr. Bill</name>
-              <id>c4</id>
+              <id>_c4</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
@@ -95,30 +95,30 @@
           <race>
             <race_name>President</race_name>
             <race_id>r1</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Ms. Coder</name>
-              <id>c1</id>
+              <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Shannon Hoffman</name>
-              <id>c2</id>
+              <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
           <race>
             <race_name>Senate</race_name>
             <race_id>r2</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Joe Blow</name>
-              <id>c3</id>
+              <id>_c3</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Dr. Bill</name>
-              <id>c4</id>
+              <id>_c4</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
@@ -137,30 +137,30 @@
           <race>
             <race_name>President</race_name>
             <race_id>r1</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Ms. Coder</name>
-              <id>c1</id>
+              <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Shannon Hoffman</name>
-              <id>c2</id>
+              <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
           <race>
             <race_name>Senate</race_name>
             <race_id>2</race_id>
-            <write_in>Yes</write_in>
+            <write_in>yes</write_in>
             <candidate>
               <name>Joe Blow</name>
-              <id>c3</id>
+              <id>_c3</id>
               <party>Republican</party>
             </candidate>
             <candidate>
               <name>Dr. Bill</name>
-              <id>c4</id>
+              <id>_c4</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>

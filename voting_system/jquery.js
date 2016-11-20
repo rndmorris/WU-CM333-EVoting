@@ -1,5 +1,8 @@
 $(document).ready(function(){
     $(".sub_but").click(function(){
-    	/*alert("Good job, stupid!"); */
+    });
+
+    $(".radio_click").click(function(){
+   // alert("hello!");
     });
 }); 

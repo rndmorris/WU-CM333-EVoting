@@ -45,9 +45,9 @@
   	<br>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="citizen">1. Are you a citizen of the United States of America?</label>
+    	<label class="control-label col-sm-6" for="cit">1. Are you a citizen of the United States of America?</label>
     	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="cit" value="cit_yes"
+   	    <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_yes"
 
           <?php   if (isset($_SESSION['ses_cit'])){
             if(strcmp($_SESSION['ses_cit'], "cit_yes") == 0) {
@@ -56,7 +56,7 @@
           }?>
 
           >Yes</label>
-  	   <label class="radio-inline"><input type="radio" name="cit" value="cit_no"
+  	   <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_no"
 
 
           <?php   if (isset($_SESSION['ses_cit'])){
