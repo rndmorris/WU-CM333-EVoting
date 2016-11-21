@@ -33,6 +33,35 @@
     if (isset($_SESSION['ses_curr_add']))   { unset($_SESSION['ses_curr_add']); }
     if (isset($_SESSION['ses_tele']))       { unset($_SESSION['ses_tele']);     }
     if (isset($_SESSION['ses_email']))      { unset($_SESSION['ses_email']);    }
+
+    if (isset($_SESSION['ses_vID']))        { unset($_SESSION['ses_vID']);       }
+    if (isset($_SESSION['district']))       { unset($_SESSION['district']);      }
+    
+    for($k = 0; $k < 100; $k++){
+           $j = strval($k);
+           $j = 'wi_r'.$j;
+           $t = strval($k);
+           $t = "r".$t;
+           
+           //echo $j;
+            if(isset($_POST[$j]))
+            {
+              unset($_POST[$j]);
+            }
+            if(isset($_POST[$t]))
+            {
+              unset($_POST[$t]);
+            }
+            if(isset($_SESSION[$j]))
+            {
+              unset($_SESSION[$j]);
+            }
+            if(isset($_SESSION[$t]))
+            {
+              unset($_SESSION[$t]);
+            }
+    }
+
     
   ?>
 
@@ -47,7 +76,7 @@
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 
-      <a href="vote_main.php"><button class="mButton" style="vertical-align:middle"><span>Vote</span></button></a>
+      <a href="id_entry.php"><button class="mButton" style="vertical-align:middle"><span>Vote</span></button></a>
       <br><br><br>
       <a href="reg_main.php"><button class="mButton" style="vertical-align:middle"><span>Register</span></button></a>
     </div>

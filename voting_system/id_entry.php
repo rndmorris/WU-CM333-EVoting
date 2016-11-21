@@ -31,7 +31,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_add">Please enter you 8 digit voter ID number:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="vID" name="vID" pattern="[0-9]{8}" placeholder="Please enter your 8 digit voter ID number."
+        <input type="text" class="form-control" id="vID" name="vID" pattern="[0-9]{8}" required="required"placeholder="Please enter your 8 digit voter ID number."
           <?php   if (isset($_SESSION['ses_vID'])){
           echo 'value="', $_SESSION['ses_vID'], '"';
           echo " ";
