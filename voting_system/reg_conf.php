@@ -14,13 +14,25 @@
   <?php
       session_start();
 
+      ini_set('session.cache_limiter','private');
+      session_cache_limiter(false);
+
       /* THIS PART DISALLOWS REFRESHING AND INAPPROPRIATE NAVIGATION*/
 
       if (!isset($_POST['fname'])){
-        header("Location: http://localhost/voting_system/reg_main.php");
+        header("Location: reg_main.php");
         //header("Location: http://www.google.com");
         exit;
       }
+
+      if ($_SESSION['fromExit'] == 1){
+        header("Location: reg_main.php");
+        $_SESSION['fromExit'] = 0;
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
+
 
      /*THIS PART TAKES THE POST VARIABLES AND SAVES THEM AS SESSION VARIABLES*/
 
@@ -54,7 +66,8 @@
 
     $_SESSION['ses_curr_add'] = $_POST['curr_add'];
     $_SESSION['ses_tele']     = $_POST['tele'];
-    $_SESSION['ses_email']    = $_POST['email'];      
+    $_SESSION['ses_email']    = $_POST['email'];  
+
 
   ?>
 
@@ -166,7 +179,7 @@
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-4">
         <a href="http://localhost/voting_system/reg_main.php"><button class="btn btn-default sub_but">Redo</button></a>
-        <a href="http://localhost/voting_system/index.php"><button class="btn btn-default sub_but">Submit</button></a>
+        <a href="http://localhost/voting_system/reg_end.php"><button class="btn btn-default sub_but">Submit</button></a>
       </div>
     </div>
 

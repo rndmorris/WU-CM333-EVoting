@@ -14,10 +14,20 @@
   <?php
       session_start();
 
+      ini_set('session.cache_limiter','public');
+      session_cache_limiter(false);
+
       /* THIS PART DISALLOWS REFRESHING AND INAPPROPRIATE NAVIGATION*/
 
+
       if (!isset($_SESSION['ses_raceCnt'])){
-        header("Location: http://localhost/voting_system/reg_main.php");
+        header("Location: index.php");
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
+       if (!isset($_SESSION['district'])){
+        header("Location: index.php");
         //header("Location: http://www.google.com");
         exit;
       }
@@ -68,8 +78,8 @@
     	    return (string) $object[$attribute];
 		}
 
-          if ( file_exists('example.xml') ) {
-	    $xml = simplexml_load_file('example.xml');
+          if ( file_exists('ballot.xml') ) {
+	    $xml = simplexml_load_file('ballot.xml');
       	echo 'Races voted in: ', $_SESSION['ses_raceCnt'];
       	echo '<br>';
 
@@ -89,8 +99,10 @@
 
      	if(isset($_POST[$r]))
      	{
-     		/*echo 'IN IF';
-     		echo $_POST[$r];*/
+     		echo 'IN IF';
+     		echo $_POST[$r];
+        echo "    the r =  ";
+        echo $r;
      		$_SESSION[$r] = $_POST[$r];
      		echo $_SESSION[$r];
         echo "   ", $r;
@@ -130,7 +142,7 @@
     <div class="form-group">
       <div class="col-sm-offset-4 col-sm-4">
         <a href="http://localhost/voting_system/vote_main.php"><button class="btn btn-default sub_but">Redo</button></a>
-        <a href="http://localhost/voting_system/index.php"><button class="btn btn-default sub_but">Submit</button></a>
+        <a href="http://localhost/voting_system/vote_end.php"><button class="btn btn-default sub_but">Submit</button></a>
       </div>
     </div>
 

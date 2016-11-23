@@ -14,8 +14,19 @@
   <?php 
     session_start();
 
-    ini_set('session.cache_limiter','public');
+    ini_set('session.cache_limiter','private');
     session_cache_limiter(false);
+
+    if (!isset($_SESSION['ses_fname'])){
+        header("Location: index.php");
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
+    $_SESSION['fromExit'] = 1;
+
+
+
     
     if (isset($_SESSION['ses_cit']))        { unset($_SESSION['ses_cit']);      }
     if (isset($_SESSION['ses_kan_res']))    { unset($_SESSION['ses_kan_res']);  }
@@ -79,9 +90,8 @@
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 
-      <a href="id_entry.php"><button class="mButton" style="vertical-align:middle"><span>Vote</span></button></a>
-      <br><br><br>
-      <a href="reg_main.php"><button class="mButton" style="vertical-align:middle"><span>Register</span></button></a>
+      <a href="index.php"><button class="mButton" style="vertical-align:middle"><span>Home</span></button></a>
+
     </div>
   </div>
 

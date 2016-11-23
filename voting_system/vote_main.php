@@ -13,6 +13,8 @@
 
   <?php 
     session_start();
+
+
     if(isset($_POST['vID'])) { 
     	$_SESSION['ses_vID'] = $_POST['vID']; 
     }
@@ -52,29 +54,29 @@
     //alert("hello2222?");
 
       		$('#test input').on('change', function() {
-      			console.log("in on change!");
+      			//console.log("in on change!");
 
     	for(i =0;i<20; i++){
     		var wi_var = "wi_r" + i;
     		var but_var = "r" + i;
-    		console.log(wi_var, "  ", but_var);
+    		//console.log(wi_var, "  ", but_var);
       			
-      			console.log("   " + wi_var);
-      			console.log("   " + but_var);
+      			//console.log("   " + wi_var);
+      			//console.log("   " + but_var);
 				// var name = element.getAttribute("input:checked");
 				// concole.log(name);
 
 
-      			console.log("val    " + $('input[name="' + but_var + '"]:checked', '#test').val());
+      			//console.log("val    " + $('input[name="' + but_var + '"]:checked', '#test').val());
 
 
 				if ( $( 'input[name="' + but_var + '"]' ).length ) {
-					console.log("in length");
+					//console.log("in length");
 
 		      	var canVal = $('input[name="' + but_var + '"]:checked', '#test').val();
 					if(canVal.startsWith("_")){
 
-					console.log("in if!");
+					//console.log("in if!");
 					$('input:text[name="' + wi_var + '"]').val( "" );
 					//$('input:text[name="wi_r1"]').prop('disabled', true);
 
@@ -116,7 +118,7 @@
     // then exit, then subtract one to district to pull from correct ballot
 
     if ( file_exists('example.xml') ) {
-	    $xml = simplexml_load_file('example.xml');
+	    $xml = simplexml_load_file('ballot.xml');
 	 
 	    echo $xml->ballot[$district]->district;
 	    echo '<br>';

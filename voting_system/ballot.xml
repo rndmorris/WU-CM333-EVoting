@@ -127,39 +127,40 @@
     </scopes>
  </ballot>
 
-  <ballot>
+ <ballot>
+  
   <district>District 4</district>
     <scopes>
       <scope>
         <scope_name>National</scope_name>
-        <scope_id>1</scope_id>
+        <scope_id>n1</scope_id>
         <races>
           <race>
             <race_name>President</race_name>
             <race_id>r1</race_id>
             <write_in>yes</write_in>
             <candidate>
-              <name>Ms. Coder</name>
+              <name>Ms. Sandra Coder</name>
               <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Shannon Hoffman</name>
+              <name>Shannon "Hip Hop" Hoffman</name>
               <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
           <race>
             <race_name>Senate</race_name>
-            <race_id>2</race_id>
+            <race_id>r2</race_id>
             <write_in>yes</write_in>
             <candidate>
-              <name>Joe Blow</name>
+              <name>Joe Jackson Blow</name>
               <id>_c3</id>
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Dr. Bill</name>
+              <name>Dr. Boston Bill</name>
               <id>_c4</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
@@ -168,5 +169,6 @@
       </scope>
     </scopes>
  </ballot>
+
 
 </ballots>

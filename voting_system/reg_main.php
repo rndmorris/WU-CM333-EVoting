@@ -26,6 +26,9 @@
     <div id="panel1">
       <?php
         session_start();
+
+        ini_set('session.cache_limiter','private');
+        session_cache_limiter(false);
 /*        $_SESSION['type_reg'] = true;
         if ($_SESSION['type_reg'] == false){
           header("Location: http://localhost/vote/voting_main_php.php");
@@ -33,6 +36,14 @@
         exit;
         }
         print session_id();*/
+
+      if ($_SESSION['fromExit'] == 1){
+        header("Location: http://localhost/voting_system/index.php");
+        $_SESSION['fromExit'] = 0;
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
       ?>
     </div>
 
