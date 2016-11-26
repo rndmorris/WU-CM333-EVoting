@@ -23,6 +23,13 @@
     	header("Location: http://localhost/voting_system/index.php");}
     }
 
+    if ($_SESSION['fromExit'] == 1){
+        header("Location: http://localhost/voting_system/index.php");
+        $_SESSION['fromExit'] = 0;
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
     $district = 0;
 
     if($_SESSION['ses_vID'] >= 00000000 && $_SESSION['ses_vID'] <= 25000000) {
@@ -97,13 +104,15 @@
   <div class="jumbotron text-center">
   <h1>Ballot</h1>
   <p>Please select the canidates you would like to vote for.</p>
+   <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="padding_main">
   <div class="form_full">
     <form id="test" class="form-horizontal" action="vote_conf.php" method="post">
        <?php 
   	//include 'example.php';
-    //session_start();
+   //session_start();
 
 
     //if from 00000000 > 25000000

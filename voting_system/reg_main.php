@@ -17,7 +17,9 @@
 <div class="container">
 	<div class="jumbotron text-center">
     <h1>Voter Registration</h1>
-    <p>Please fill out this form to register, stupid.</p>
+    <p>Please fill out this form to register.</p>
+      <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <br>
 

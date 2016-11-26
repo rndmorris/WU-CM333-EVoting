@@ -26,6 +26,66 @@
     $_SESSION['fromExit'] = 1;
 
 
+    $mysqli = new mysqli("127.0.0.1", "root", "password", "registration", 3306);
+    if ($mysqli->connect_errno) {
+    echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
+    }
+
+    echo $mysqli->host_info . "\n";
+/*
+    $insert = $mysqli->query("INSERT INTO voter(fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) VALUES ($_SESSION['ses_fname'], 
+      $_SESSION['ses_mname'], 
+      $_SESSION['ses_lname'], 
+      $_SESSION['ses_n_suf'], 
+      $_SESSION['ses_dob'], 
+      $_SESSION['ses_dl_num'], 
+      $_SESSION['ses_dl_iss'], 
+      $_SESSION['ses_dl_exp'], 
+      $_SESSION['ses_dl_add'], 
+      $_SESSION['ses_curr_add'], 
+      $_SESSION['ses_tele'], 
+      $_SESSION['ses_email'])";
+    $insret->exectute(); */
+
+/*
+$sql = "INSERT INTO voter (fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) 
+  VALUES ($_SESSION['ses_fname'], 
+    $_SESSION['ses_mname'], 
+    $_SESSION['ses_lname'], 
+    $_SESSION['ses_n_suf'], 
+    $_SESSION['ses_dob'], 
+    $_SESSION['ses_dl_num'], 
+    $_SESSION['ses_dl_iss'], 
+    $_SESSION['ses_dl_exp'], 
+    $_SESSION['ses_dl_add'], 
+    $_SESSION['ses_curr_add'], 
+    $_SESSION['ses_tele'], 
+    $_SESSION['ses_email'])";*/
+
+$x_fname = $_SESSION['ses_fname'];
+$x_mname = $_SESSION['ses_mname'];
+$x_lname = $_SESSION['ses_lname'];
+$x_sname = $_SESSION['ses_n_suf'];
+$x_dob = $_SESSION['ses_dob'];
+$x_dl_num = $_SESSION['ses_dl_num'];
+$x_dl_iss = $_SESSION['ses_dl_iss'];
+$x_dl_exp = $_SESSION['ses_dl_exp'];
+$x_dl_add = $_SESSION['ses_dl_add'];
+$x_dl_curr_add = $_SESSION['ses_curr_add'];
+$x_dl_tele = $_SESSION['ses_tele'];
+$x_dl_email = $_SESSION['ses_email'];
+
+
+
+
+$sql = "INSERT INTO voter (fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) 
+  VALUES ('$x_fname', '$x_mname', '$x_lname', '$x_sname', '$x_dob', '$x_dl_num', '$x_dl_iss', '$x_dl_exp', '$x_dl_add', '$x_dl_curr_add', '$x_dl_tele','$x_dl_email')";
+
+if ($mysqli->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $mysqli->error;
+}
 
     
     if (isset($_SESSION['ses_cit']))        { unset($_SESSION['ses_cit']);      }
@@ -85,8 +145,10 @@
 <div class="container">
 
   <div class="jumbotron text-center">
-  <h1>Welcome!</h1>
-  <p>Would you like to vote or register?</p>
+  <h1>Thank you for registering!</h1>
+  <p>Please click the botton to return to the main page.</p>
+  <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 

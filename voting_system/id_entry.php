@@ -16,6 +16,13 @@
 
     ini_set('session.cache_limiter','public');
     session_cache_limiter(false);
+
+    if ($_SESSION['fromExit'] == 1){
+        header("Location: http://localhost/voting_system/index.php");
+        $_SESSION['fromExit'] = 0;
+        //header("Location: http://www.google.com");
+        exit;
+      }
     
   ?>
 
@@ -27,6 +34,8 @@
   <div class="jumbotron text-center">
   <h1>Welcome!</h1>
   <p>Would you like to vote or register?</p>
+    <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="form_full">
     <form class="form-horizontal" action="vote_main.php" method="post">

@@ -17,6 +17,7 @@
       ini_set('session.cache_limiter','private');
       session_cache_limiter(false);
 
+
       /* THIS PART DISALLOWS REFRESHING AND INAPPROPRIATE NAVIGATION*/
 
       if (!isset($_POST['fname'])){
@@ -78,6 +79,8 @@
 	<div class="jumbotron text-center">
   <h1>Voter Registration</h1>
     <p>Is this really what you meant, stupid?</p>
+    <br>
+    <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
 
   <br>

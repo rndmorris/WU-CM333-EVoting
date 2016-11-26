@@ -19,6 +19,13 @@
 
       /* THIS PART DISALLOWS REFRESHING AND INAPPROPRIATE NAVIGATION*/
 
+      if ($_SESSION['fromExit'] == 1){
+        header("Location: http://localhost/voting_system/index.php");
+        $_SESSION['fromExit'] = 0;
+        //header("Location: http://www.google.com");
+        exit;
+      }
+
 
       if (!isset($_SESSION['ses_raceCnt'])){
         header("Location: index.php");
@@ -65,6 +72,8 @@
 	<div class="jumbotron text-center">
   <h1>Vote Confirmation</h1>
     <p>Is this really what you meant, stupid?</p>
+      <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
 
   <br>

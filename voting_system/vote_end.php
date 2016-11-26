@@ -17,6 +17,8 @@
     ini_set('session.cache_limiter','public');
     session_cache_limiter(false);
 
+    $_SESSION['fromExit'] = 1;
+
     if ( file_exists('example.xml') ) {
       $xml = simplexml_load_file('ballot.xml');
 
@@ -176,8 +178,10 @@
 <div class="container">
 
   <div class="jumbotron text-center">
-  <h1>Welcome!</h1>
-  <p>Would you like to vote or register?</p>
+  <h1>Thank you for voting!</h1>
+  <p>Please click the botton to return to the main page.</p>
+    <br>
+  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 

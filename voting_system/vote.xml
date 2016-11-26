@@ -1,3 +1,4 @@
+<?xml version='1.0' standalone='yes'?>
 <race>
       <race_id>r1</race_id>
       <candidate>
@@ -118,5 +119,21 @@
           <id>_c3</id>
           <party>Republican</party>
           <write_in>no</write_in>
+      </candidate>
+</race>
+<race>
+      <race_id>r1</race_id>
+      <candidate>
+          <name>Shannon Hoffman</name>
+          <id>_c2</id>
+          <party>Minarchist Socialist Orthapedic Orthadontist</party>
+          <write_in>no</write_in>
+      </candidate>
+</race>
+<race>
+      <race_id>r2</race_id>
+      <candidate>
+          <name>George Clinton</name>
+          <write_in>yes</write_in>
       </candidate>
 </race>

@@ -18,3 +18,8 @@ The first file file will be entitled "index.php," so you should be able to follo
 Once you have the voting_system folder in your htdoc folder and have apache running, you can go to a browers and go to the url:
 
 http://localhost/voting_system/index.php
+
+start up mysql with:
+
+mysql -h localhost -u root -p
+
