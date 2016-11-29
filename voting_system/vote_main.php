@@ -32,7 +32,7 @@
 
     $district = 0;
 
-    if($_SESSION['ses_vID'] >= 00000000 && $_SESSION['ses_vID'] <= 25000000) {
+    if($_SESSION['ses_vID'] >\= 00000000 && $_SESSION['ses_vID'] <= 25000000) {
     	$district = 0;
     	$_SESSION['district'] = 0;
     }
