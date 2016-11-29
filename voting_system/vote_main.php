@@ -85,7 +85,7 @@
 
 					//console.log("in if!");
 					$('input:text[name="' + wi_var + '"]').val( "" );
-					//$('input:text[name="wi_r1"]').prop('disabled', true);
+					$('input:text[name="wi_r1"]').prop('disabled', true);
 
 					}
 				}
@@ -233,7 +233,7 @@
 									echo '</div>';
 
 										echo '<div class="col-sm-6">';
-										echo '<input type="text" class="form-control" name="';
+										echo '<input pattern="[ A-Za-z\.\'\-]*" type="text" class="form-control" name="';
 										echo 'wi_', $raceID;
 										echo '" id="';
 										echo 'wi_', $raceID;
