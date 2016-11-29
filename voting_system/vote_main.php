@@ -85,7 +85,7 @@
 
 					//console.log("in if!");
 					$('input:text[name="' + wi_var + '"]').val( "" );
-					//$('input:text[name="wi_r1"]').prop('disabled', true);
+					$('input:text[name="wi_r1"]').prop('disabled', true);
 
 					}
 				}

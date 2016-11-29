@@ -311,7 +311,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="curr_add">*Current Address:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="curr_add" name="curr_add" placeholder="Enter Current Address"
+        <input type="text" pattern="[ A-Za-z\.\'\-,]*" class="form-control" id="curr_add" name="curr_add" placeholder="Enter Current Address"
           <?php   if (isset($_SESSION['ses_curr_add'])){
           echo 'value="', $_SESSION['ses_curr_add'], '"';
           echo " ";
@@ -323,7 +323,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="tele">Current Telephone Number:</label>
       <div class="col-sm-10">
-        <input type="tel" class="form-control" id="tele" name="tele" placeholder="Enter Current Telephone Number"
+        <input type="tel" pattern="[0-9]{10}" class="form-control" id="tele" name="tele" placeholder="xxxyyyzzzz"
           <?php   if (isset($_SESSION['ses_tele'])){
           echo 'value="', $_SESSION['ses_tele'], '"';
           echo " ";
