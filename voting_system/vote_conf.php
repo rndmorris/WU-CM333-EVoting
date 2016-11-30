@@ -44,10 +44,10 @@
            $j = 'wi_r'.$j;
            $t = strval($k);
            $t = "r".$t;
-           echo $j;
+           //echo $j;
            if(isset($_POST[$j])){
              if(!strcmp($_POST[$j], "") == 0){
-                echo '    ', $_POST[$j];
+                //echo '    ', $_POST[$j];
                 $_POST[$t] = $_POST[$j];
                 $_SESSION[$j] = $_POST[$j];
                 }
