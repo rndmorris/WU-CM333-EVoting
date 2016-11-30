@@ -52,7 +52,7 @@
 
   ?>
 
-  <script>
+ <script>
   window.onload = function(){
     //alert("hello?");
 	};
@@ -60,40 +60,65 @@
 	$(window).on("load", function(){
     //alert("hello2222?");
 
+    //$('input:text[name="wi_r1"]').prop('disabled', true);
+    //$('input:text[name="wi_r2"]').prop('disabled', true);
+
+        			for(i =0;i<20; i++){
+    				var wi_var = "wi_r" + i;
+    				var but_var = "r" + i;
+    				//console.log("FIRST LOOP!" + wi_var);
+
+    				if ( $( 'input[name="' + but_var + '"]' ).length ) {
+    					//console.log("FIRST IF11111!" + but_var);
+    					//var canVal0 = $('input[name="' + but_var + '"]:checked', '#test').val();
+    					//console.log("FIRST IF22222!" + canVal0);
+						//if(canVal0.startsWith("_")){
+						//	console.log("Second IF!");
+							$('input:text[name="' + wi_var + '"]').prop('disabled', true);
+
+							}
+    					}
+
+    				
+
+
       		$('#test input').on('change', function() {
       			//console.log("in on change!");
 
-    	for(i =0;i<20; i++){
-    		var wi_var = "wi_r" + i;
-    		var but_var = "r" + i;
-    		//console.log(wi_var, "  ", but_var);
+    			for(i =0;i<20; i++){
+    				var wi_var = "wi_r" + i;
+    				var but_var = "r" + i;
+    				//console.log(wi_var, "  ", but_var);
       			
-      			//console.log("   " + wi_var);
-      			//console.log("   " + but_var);
-				// var name = element.getAttribute("input:checked");
-				// concole.log(name);
+      				//console.log("   " + wi_var);
+      				//console.log("   " + but_var);
+					// var name = element.getAttribute("input:checked");
+					// concole.log(name);
+
+      				//console.log("val    " + $('input[name="' + but_var + '"]:checked', '#test').val());
 
 
-      			//console.log("val    " + $('input[name="' + but_var + '"]:checked', '#test').val());
+					if ( $( 'input[name="' + but_var + '"]' ).length ) {
+						//console.log("in length");
 
+		      			var canVal = $('input[name="' + but_var + '"]:checked', '#test').val();
+						if(canVal && canVal.startsWith("_")){
 
-				if ( $( 'input[name="' + but_var + '"]' ).length ) {
-					//console.log("in length");
+							console.log("in if!");
+							$('input:text[name="' + wi_var + '"]').val( "" );
+							$('input:text[name="' + wi_var + '"]').prop('disabled', true);
 
-		      	var canVal = $('input[name="' + but_var + '"]:checked', '#test').val();
-					if(canVal.startsWith("_")){
-
-					//console.log("in if!");
-					$('input:text[name="' + wi_var + '"]').val( "" );
-					$('input:text[name="wi_r1"]').prop('disabled', true);
-
-					}
+						}
+						if(canVal && !canVal.startsWith("_")) {
+							$('input:text[name="' + wi_var + '"]').prop('disabled', false);
+						}
 				}
 			}
 			});
   		
 	});
   </script>
+
 
 
 </head>
