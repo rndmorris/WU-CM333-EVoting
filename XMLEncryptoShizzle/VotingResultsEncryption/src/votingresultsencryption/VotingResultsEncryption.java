@@ -1,5 +1,7 @@
 //Author Ben Ciummo
+
 package votingresultsencryption;
+
 import java.io.*;
 import java.io.File;
 import java.io.FileInputStream;
@@ -13,36 +15,68 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
 
 public class VotingResultsEncryption 
 {
+    public static String Mode;
+    public static String InFilePath;
+    public static String OutFilePath;
+    public static String Key;
+    public static File InFile;
+    public static File OutFile;
+    
     public static void main(String[] args) 
-            throws FileNotFoundException
+            throws FileNotFoundException,SAXException
     {
-        //Checks for valid number of args
-        if(args.length < 4)
+        try
         {
-            System.out.println("VotingResultsEncryption <encrypt|decrypt> <InFile> <OutFile> <16 digit Key>");
+            //Checks for valid number of args
+            if(args.length != 2 && args.length != 4)
+            {
+                throw new IllegalArgumentException();
+            }
+            else if(args.length >=2)
+            {
+                Mode = args[0].toLowerCase();
+                InFilePath = args[1];
+                InFile = new File(InFilePath);
+                if(args.length == 4)
+                {
+                    OutFilePath = args[2];
+                    Key = args[3];
+                    OutFile = new File(OutFilePath);
+                }
+            }
+        
+            if(Mode.equals("encrypt"))
+            {
+                System.out.println("Encrypting " + InFile +" with key: "+ Key+ " outputting to "+OutFile);
+                encrypt(Key,InFile, OutFile);
+            }
+            else if (Mode.equals("decrypt"))
+            {
+                System.out.println("Decrypting " + InFile +" with key: "+ Key+ " outputting to "+OutFile);
+                decrypt(Key,InFile, OutFile);
+            }
+            else if (Mode.equals("count"))
+            {
+                count(InFile);
+            }
+            else
+            {
+                throw new IllegalArgumentException();
+            }
+        }
+        catch(IllegalArgumentException ex)
+        {
+            System.out.println( "VotingResultsEncryption \n"
+                              + "Either <encrypt|decrypt> <InFile> <OutFile> <16 digit Key>\n"
+                              + "Or     <count> <InXMLFile> <OutFile>");
             System.exit(1);
         }
-        
-        String mode = args[0];
-        String inFilePath = args[1];
-        String outFilePath = args[2];
-        String key = args[3];
-        File inFile = new File(inFilePath);
-        File outFile = new File(outFilePath);
-                
-        if(mode.toLowerCase().equals("encrypt"))
-        {
-            System.out.println("Encrypting " + inFile +" with key: "+ key+ " outputting to "+outFile);
-            encrypt(key,inFile, outFile);
-        }
-        else
-        {
-            System.out.println("Decrypting " + inFile +" with key: "+ key+ " outputting to "+outFile);
-            decrypt(key,inFile, outFile);
-        }        
     }
 
     private static void encrypt(String inKey, File inFile, File outFile) 
@@ -72,7 +106,7 @@ public class VotingResultsEncryption
                 | InvalidKeyException | IOException 
                 | IllegalBlockSizeException| BadPaddingException ex)
         {
-               System.out.println(ex);
+               System.out.println(ex.fillInStackTrace());
         }
     }
     
@@ -99,7 +133,25 @@ public class VotingResultsEncryption
                 | InvalidKeyException | IOException 
                 | IllegalBlockSizeException| BadPaddingException ex)
         {
-               System.out.println(ex);
+               System.out.println(ex.fillInStackTrace());
+        }
+    }
+    
+    //This method is not complete
+    private static void count(File xmlFile)
+            throws SAXException
+    {
+        try
+        {
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document xmlFileInstance = docBuilder.parse(xmlFile);
+        
+            xmlFileInstance.getDocumentElement().getNodeName();
+        }
+        catch (IOException | ParserConfigurationException ex)
+        {
+            System.out.println(ex.fillInStackTrace());
         }
     }
 }
