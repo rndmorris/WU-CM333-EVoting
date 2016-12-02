@@ -56,7 +56,7 @@
   $(document).ready(function(){
     
         $("#clear_but").click(function(){
-        alert("Clear.");
+        //alert("Clear.");
              for(i =0;i<100; i++){
     			var wi_var = "wi_r" + i;
     			var but_var = "r" + i;
