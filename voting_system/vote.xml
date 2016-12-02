@@ -1,4 +1,5 @@
 <?xml version='1.0' standalone='yes'?>
+<vote>
 <race>
       <race_id>r1</race_id>
       <candidate>
@@ -155,3 +156,4 @@
           <write_in>no</write_in>
       </candidate>
 </race>
+</vote>
