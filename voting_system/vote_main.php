@@ -64,7 +64,7 @@
     			if ( $( 'input[name="' + but_var + '"]' ).length ) {
     				var canVal = $('input[name="' + but_var + '"]:checked', '#test').val();
 
-							console.log("in if!");
+							//console.log("in if!");
 							$('input:text[name="' + wi_var + '"]').val( "" );
 
 							$('input[name="' + but_var + '"]').prop('checked', false);
