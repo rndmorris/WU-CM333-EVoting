@@ -8,8 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
 </head>
 
@@ -19,7 +19,7 @@
     <h1>Voter Registration</h1>
     <p>Please fill out this form to register.</p>
       <br>
-  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+  <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <br>
 
@@ -49,18 +49,17 @@
       ?>
     </div>
 
-
     <div class="form-group">
-    	<div class="text_box">
-    	<p><strong>STEP 1 OF 4) </strong><br>VERIFY YOUR VOTING ELIGIBILITY<br></p>
+      <div class="text_box">
+      <p><strong>STEP 1 OF 4) </strong><br>VERIFY YOUR VOTING ELIGIBILITY<br></p>
       </div>
     </div>
-  	<br>
+    <br>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="cit">1. Are you a citizen of the United States of America?</label>
-    	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_yes"
+      <label class="control-label col-sm-6" for="cit">1. Are you a citizen of the United States of America?</label>
+      <div class="col-sm-6">
+        <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_yes"
 
           <?php   if (isset($_SESSION['ses_cit'])){
             if(strcmp($_SESSION['ses_cit'], "cit_yes") == 0) {
@@ -69,7 +68,7 @@
           }?>
 
           >Yes</label>
-  	   <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_no"
+       <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_no"
 
 
           <?php   if (isset($_SESSION['ses_cit'])){
@@ -79,13 +78,13 @@
           }?>
 
         >No</label>
-  	  </div>
+      </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="age">2. Will you be 18 years of age on or before election day?</label>
-    	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="age" value="age_yes"
+      <label class="control-label col-sm-6" for="age">2. Will you be 18 years of age on or before election day?</label>
+      <div class="col-sm-6">
+        <label class="radio-inline"><input type="radio" name="age" value="age_yes"
 
           <?php   if (isset($_SESSION['ses_age'])){
             if(strcmp($_SESSION['ses_age'], "age_yes") == 0) {
@@ -94,7 +93,7 @@
           }?>
 
           >Yes</label>
-  	    <label class="radio-inline"><input type="radio" name="age" value="age_no"
+        <label class="radio-inline"><input type="radio" name="age" value="age_no"
 
           <?php   if (isset($_SESSION['ses_age'])){
             if(strcmp($_SESSION['ses_age'], "age_no") == 0) {
@@ -103,13 +102,13 @@
           }?>
 
           >No</label>
-  	  </div>
+      </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="kan_res">3. Are you a resident of Kansas?</label>
-    	 <div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_yes"
+      <label class="control-label col-sm-6" for="kan_res">3. Are you a resident of Kansas?</label>
+       <div class="col-sm-6">
+        <label class="radio-inline"><input type="radio" name="kan_res" value="res_yes"
 
           <?php   if (isset($_SESSION['ses_kan_res'])){
             if(strcmp($_SESSION['ses_kan_res'], "res_yes") == 0) {
@@ -118,7 +117,7 @@
           }?>
 
           >Yes</label>
-  	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_no"
+        <label class="radio-inline"><input type="radio" name="kan_res" value="res_no"
 
 
           <?php   if (isset($_SESSION['ses_kan_res'])){
@@ -128,13 +127,13 @@
           }?>
 
           >No</label>
-  	   </div>
+       </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="fel">4. Felony Conviction - Please Choose One:</label>
-    	<div class="col-sm-6">
-   	    <label class="radio-inline"><input type="radio" name="fel" value="fel_never"
+      <label class="control-label col-sm-6" for="fel">4. Felony Conviction - Please Choose One:</label>
+      <div class="col-sm-6">
+        <label class="radio-inline"><input type="radio" name="fel" value="fel_never"
 
           <?php   if (isset($_SESSION['ses_fel'])){
             if(strcmp($_SESSION['ses_fel'], "fel_never") == 0) {
@@ -143,8 +142,8 @@
           }?>
 
           >I have never been convicted of a felony.</label>
-   	    <br>
-  	     <label class="radio-inline"><input type="radio" name="fel" value="fel_rest"
+        <br>
+         <label class="radio-inline"><input type="radio" name="fel" value="fel_rest"
 
           <?php   if (isset($_SESSION['ses_fel'])){
             if(strcmp($_SESSION['ses_fel'], "fel_rest") == 0) {
@@ -153,8 +152,8 @@
           }?>
 
           >I have been convicted of a felony. All the terms of my sentence have been completed and my rights have been restored.</label>
-  	     <br>
-  	     <label class="radio-inline"><input type="radio" name="fel" value="fel_yes"
+         <br>
+         <label class="radio-inline"><input type="radio" name="fel" value="fel_yes"
 
           <?php   if (isset($_SESSION['ses_fel'])){
             if(strcmp($_SESSION['ses_fel'], "fel_yes") == 0) {
@@ -163,18 +162,19 @@
           }?>
 
           >I am currently under sentence for a felony.</label>
-  	     <br>
+         <br>
       </div>
     </div>
-    <br><br>
-
+    <br>
+    <hr style="border-width: 4px;">
+    <br>
     <div class="form-group">
-    	<div class="text_box">
-    	<p><strong>STEP 2 OF 4) </strong><br>VERIFY PERSONAL INFORMATION<br>
+      <div class="text_box">
+      <p><strong>STEP 2 OF 4) </strong><br>VERIFY PERSONAL INFORMATION<br>
       Please enter the following information as it appears on on your driver's license.</p>
       </div>
     </div>
-  	<br>
+    <br>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">*First Name:</label>
@@ -222,11 +222,11 @@
     <br>
 
     <div class="form-group">
-    	<div class="text_box">
-    	<p><strong>Date of Birth (must match driver's license/nondriver's card information)</strong></p>
+      <div class="text_box">
+      <p><strong>Date of Birth (must match driver's license/nondriver's card information)</strong></p>
       </div>
     </div>
-  	</br>
+    </br>
 
      <div class="form-group">
       <label class="control-label col-sm-2" for="dob">*Date of Birth (MM/DD/YYYY):</label>
@@ -238,7 +238,9 @@
           }?>>
       </div>
     </div>
-    <br><br>
+    <br>
+    <hr style="border-width: 4px;">
+    <br>
 
     <div class="form-group">
       <div class="text_box">
@@ -248,11 +250,11 @@
     </div>  
 
     <div class="form-group">
-      	<div class="text_box">
-    	  <p><strong>Kansas driver's license or nondriver's identification card number</strong></p>
+        <div class="text_box">
+        <p><strong>Kansas driver's license or nondriver's identification card number</strong></p>
         </div>
     </div>
-  	</br>
+    </br>
 
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_num">*Driver's License Number:</label>
@@ -299,6 +301,8 @@
           }?>>
       </div>
     </div>
+     <br>
+    <hr style="border-width: 4px;">
     <br>
 
         <div class="form-group">

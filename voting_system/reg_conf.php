@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Voter Registration</title>
+  <title>Registration Confirmation</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
   <?php
       session_start();
@@ -80,7 +80,7 @@
   <h1>Voter Registration</h1>
     <p>Is this really what you meant, stupid?</p>
     <br>
-    <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+    <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
 
   <br>

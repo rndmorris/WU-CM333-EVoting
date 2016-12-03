@@ -38,6 +38,21 @@
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
           </race>
+          <race>
+            <race_name>House</race_name>
+            <race_id>r3</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Aaron Morris</name>
+              <id>_c5</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Salvador Lopez</name>
+              <id>_c6</id>
+              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+            </candidate>
+          </race>
         </races>
       </scope>
     </scopes>

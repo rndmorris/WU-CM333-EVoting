@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Voter Registration</title>
+  <title>Voter Registration Thank you</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
   <?php 
     session_start();
@@ -31,7 +31,7 @@
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
 
-    echo $mysqli->host_info . "\n";
+    //echo $mysqli->host_info . "\n";
 /*
     $insert = $mysqli->query("INSERT INTO voter(fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) VALUES ($_SESSION['ses_fname'], 
       $_SESSION['ses_mname'], 
@@ -82,7 +82,7 @@ $sql = "INSERT INTO voter (fname, mname, lname, sname, dob, dlnum, dlissdate, dl
   VALUES ('$x_fname', '$x_mname', '$x_lname', '$x_sname', '$x_dob', '$x_dl_num', '$x_dl_iss', '$x_dl_exp', '$x_dl_add', '$x_dl_curr_add', '$x_dl_tele','$x_dl_email')";
 
 if ($mysqli->query($sql) === TRUE) {
-    echo "New record created successfully";
+    //echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . $mysqli->error;
 }
@@ -146,9 +146,9 @@ if ($mysqli->query($sql) === TRUE) {
 
   <div class="jumbotron text-center">
   <h1>Thank you for registering!</h1>
-  <p>Please click the botton to return to the main page.</p>
+  <p>Please click the button to return to the main page.</p>
   <br>
-  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+  <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 

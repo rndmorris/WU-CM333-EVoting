@@ -8,8 +8,8 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
   <?php 
     session_start();
@@ -157,7 +157,7 @@
   	<h1>Ballot</h1>
   	<p>Please select the canidates you would like to vote for.</p>
    	<br>
-  	<div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+  	<div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
 
 
@@ -168,8 +168,8 @@
      <?php 
 
 
-    if ( file_exists('example.xml') ) {
-	    $xml = simplexml_load_file('ballot.xml');
+    if ( file_exists('xml/ballot.xml') ) {
+	    $xml = simplexml_load_file('xml/ballot.xml');
 	 
 	    $scopesCnt = $xml->ballot[$district]->scopes->count();
 
@@ -183,10 +183,14 @@
 
 	    $candCnt = $xml->ballot[$district]->scopes->scope->races->race->candidate->count();
 
+	    $districtnum = $district + 1;
+
+	    echo '<h2>District '.$districtnum.'</h2>';
+
 	    for( $scope = 0; $scope < $scopeCnt; $scope++) {
-	    	echo '<h2>Scope: ';
+	    	echo '<h3>Scope: ';
 	    	echo $xml->ballot[$district]->scopes->scope[$scope]->scope_name;
-	    	echo '</h2>';
+	    	echo '</h3>';
 	    	echo '<div id="scope_div">';
 				for( $race = 0; $race < $raceCnt; $race++ ) {
 
@@ -202,9 +206,9 @@
 	    				$val = strval($raceID);
 	    					echo '<div class="col-sm-12">';
 								echo '<div id="race_div">';
-					    		echo '<h3>Race: ';
+					    		echo '<h4>Race: ';
 					    		echo $xml->ballot[$district]->scopes->scope[$scope]->races->race[$race]->race_name;
-					    		echo '</h3><br><br>';
+					    		echo '</h4><br><br>';
 					    		//echo 'Race ID: ';
 					    		//echo $xml->ballot[$district]->races->race[$race]->race_id;
 					    
@@ -289,8 +293,8 @@
 									echo '</div><br><br>';
 								}
 						
-									echo '-----------------------------------------------';
-						echo '<br><br>';
+									echo '<hr style="border-width: 4px;">';
+						echo '<br>';
 						echo '</div>';
 						echo '</div>';
 						echo '</div>';
@@ -298,6 +302,7 @@
 
 					echo '</div>';
 				}
+				$_POST['fromMain'] = 'yes';
 
 	} else {
     exit('Failed to open ballot. Please consult a election official.');
@@ -320,3 +325,5 @@
 </body>
 
 </html>
+
+

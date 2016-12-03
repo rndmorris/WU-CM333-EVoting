@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Voter Registration</title>
+  <title>ID Entry</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
   <?php 
     session_start();
@@ -32,10 +32,10 @@
 <div class="container">
 
   <div class="jumbotron text-center">
-  <h1>Welcome!</h1>
-  <p>Would you like to vote or register?</p>
+  <h1>Voter ID Entry</h1>
+  <p>Please enter your 8 digit Voter ID</p>
     <br>
-  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+  <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="form_full">
     <form class="form-horizontal" action="vote_main.php" method="post">

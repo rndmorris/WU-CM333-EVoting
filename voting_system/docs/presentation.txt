@@ -1,0 +1,7 @@
+presentation
+
+sudo /opt/lampp/lampp start
+
+mysql -h localhost -u root -p
+use registration;
+select * from voter;

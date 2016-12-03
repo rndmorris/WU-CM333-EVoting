@@ -8,8 +8,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" href="styles.css" type="text/css"></link>
-  <script src="jquery.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
+  <script src="scripts/jquery.js" type="text/javascript"></script>
 
   <?php 
     session_start();
@@ -19,29 +19,52 @@
 
     $_SESSION['fromExit'] = 1;
 
-    if ( file_exists('example.xml') ) {
-      $xml = simplexml_load_file('ballot.xml');
+    if ( file_exists('xml/ballot.xml') ) {
+      $xml = simplexml_load_file('xml/ballot.xml');
 
-    $filename = "vote.xml";
-    $handle = fopen($filename, "a");
-    $contents = fread($handle, filesize($filename));
+    //$filename = "vote.xml";
+
+    //$filename = new XMLWriter();
+    //$filename->openURI('vote.xml');
+    //$handle = fopen($filename, "a");
+
+      $voteFile = new DOMDocument();
+      $voteFile->load("xml/vote.xml");
+      $voteFile->formatOutput = true;
+      $voteRoot = $voteFile->getElementsByTagName('vote')->item(0);;
 
 
-              $scopesCnt = $xml->ballot[$_SESSION['district']]->scopes->count();
-      echo 'Scopes Count: ', $scopesCnt;
-      echo "<br>";
+
+    //$last = sizeof($filename) - 1 ; 
+   // unset($filename[$last]); 
+
+// write the new data to the file 
+ //   $fp = fopen('filename.txt', 'w'); 
+    //$test = substr($filename, 0, strrpos(trim($filename), "\n"));
+    //echo $test;
+    //fwrite($fp, implode('', $filename)); 
+   // fwrite($handle, $test);
+
+
+
+    //$contents = fread($handle, filesize($filename));
+
+
+      $scopesCnt = $xml->ballot[$_SESSION['district']]->scopes->count();
+     // echo 'Scopes Count: ', $scopesCnt;
+      //echo "<br>";
 
       $scopeCnt = $xml->ballot[$_SESSION['district']]->scopes->scope->count();
-      echo 'Scope Count: ', $scopeCnt;
-      echo "<br>";
+      //echo 'Scope Count: ', $scopeCnt;
+      //echo "<br>";
 
       $racesCnt = $xml->ballot[$_SESSION['district']]->scopes->scope->races->count();
-      echo 'Races Count: ', $racesCnt;
-      echo "<br>";
+      //echo 'Races Count: ', $racesCnt;
+      //echo "<br>";
 
       $raceCnt = $xml->ballot[$_SESSION['district']]->scopes->scope->races->race->count();
-      echo 'Race Count: ', $raceCnt;
-      echo "<br>";
+      //echo 'Race Count: ', $raceCnt;
+      //echo "<br>";
       $_SESSION['ses_raceCnt']=$raceCnt;
 
       $candCnt = $xml->ballot[$_SESSION['district']]->scopes->scope->races->race->candidate->count();
@@ -55,7 +78,7 @@
            //echo $j;
             if(isset($_SESSION[$j]))
             {
-              fwrite($handle, "<race>\n");
+              /*fwritev($handle, "<race>\n");
               fwrite($handle, "      <race_id>");
               fwrite($handle, $t);
               fwrite($handle, "</race_id>\n");
@@ -65,7 +88,18 @@
               fwrite($handle, "</name>\n");
               fwrite($handle, "          <write_in>yes</write_in>\n");
               fwrite($handle, "      </candidate>\n");
-              fwrite($handle, "</race>\n");
+              fwrite($handle, "</race>\n");*/
+
+              $raceDOM = $voteRoot->appendChild($voteFile->createElement('race'));
+              $raceIDDOM = $raceDOM->appendChild($voteFile->createElement('race_id'));
+              $raceIDDOM->appendChild($voteFile->createTextNode($t));
+              $canidDOM = $raceDOM->appendChild($voteFile->createElement('candidate'));
+              $canName = $canidDOM->appendChild($voteFile->createElement('name'));
+              $canName->appendChild($voteFile->createTextNode($_SESSION[$j]));
+              $canWI = $canidDOM->appendChild($voteFile->createElement('write_in'));
+              $canWI->appendChild($voteFile->createTextNode('yes'));
+
+
             }
             if(isset($_SESSION[$t]))
             {
@@ -74,11 +108,11 @@
                     $raceID = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->race_id;
         
                       if(strcmp($raceID, $t) == 0){
-                        echo "INNN!";
-                        echo "RACE ID:    ";
-                        echo $t;
-                        echo "CandidateID?     ";
-                        echo $_SESSION[$t];
+                        //echo "INNN!";
+                        //echo "RACE ID:    ";
+                        //echo $t;
+                        //echo "CandidateID?     ";
+                        //echo $_SESSION[$t];
                         for( $candidate = 0; $candidate < $candCnt; $candidate++ ){
                     $can_name = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->candidate[$candidate]->name;
                     $can_party = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->candidate[$candidate]->party;
@@ -86,7 +120,7 @@
 
                           if(strcmp($_SESSION[$t], $can_id) == 0){
 
-                            fwrite($handle, "<race>\n");
+                            /*fwrite($handle, "<race>\n");
                             fwrite($handle, "      <race_id>");
                             fwrite($handle, $t);
                             fwrite($handle, "</race_id>\n");
@@ -102,7 +136,22 @@
                             fwrite($handle, "</party>\n");
                             fwrite($handle, "          <write_in>no</write_in>\n");
                             fwrite($handle, "      </candidate>\n");
-                            fwrite($handle, "</race>\n");
+                            fwrite($handle, "</race>\n");*/
+
+                            $raceDOM1 = $voteRoot->appendChild($voteFile->createElement('race'));
+                            $raceIDDOM1 = $raceDOM1->appendChild($voteFile->createElement('race_id'));
+                            $raceIDDOM1->appendChild($voteFile->createTextNode($t));
+                            $canidDOM1 = $raceDOM1->appendChild($voteFile->createElement('candidate'));
+                            $canName1 = $canidDOM1->appendChild($voteFile->createElement('name'));
+                            $canName1->appendChild($voteFile->createTextNode($can_name));
+                            $canID1 = $canidDOM1->appendChild($voteFile->createElement('id'));
+                            $canID1->appendChild($voteFile->createTextNode($can_id));
+                            $canPar1 = $canidDOM1->appendChild($voteFile->createElement('party'));
+                            $canPar1->appendChild($voteFile->createTextNode($can_party));
+                            $canWI1 = $canidDOM1->appendChild($voteFile->createElement('write_in'));
+                            $canWI1->appendChild($voteFile->createTextNode('no'));
+
+
                           }
                           }
                           }
@@ -110,8 +159,12 @@
               }
             }
     }
-    fclose($handle); 
+    //fclose($handle);
+    $voteFile->save("xml/vote.xml"); 
 
+      //$filearray = file($filename);
+      //$lastfifteenlines = array_slice($filearray,-15);
+      //echo implode("\n", $lastfifteenlines);
 
     }
 
@@ -181,7 +234,7 @@
   <h1>Thank you for voting!</h1>
   <p>Please click the botton to return to the main page.</p>
     <br>
-  <div><a href="index.php"><img src="home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
+  <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
   <div class="padding_main">
     <div class="entry_choice"> 
