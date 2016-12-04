@@ -23,6 +23,3 @@ start up mysql with:
 
 mysql -h localhost -u root -p
 
-==========
-sudo /etc/init.d/apache2 stop
-this is to stop any apache servers that may have become zombies.

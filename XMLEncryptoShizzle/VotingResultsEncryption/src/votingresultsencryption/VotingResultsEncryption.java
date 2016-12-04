@@ -2,11 +2,7 @@
 
 package votingresultsencryption;
 
-//import java.awt.RenderingHints.Key;
-import java.io.File;
 import java.io.*;
-import java.util.Arrays;
-import java.util.Scanner;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -14,33 +10,76 @@ import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
- 
 import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
+import javax.xml.parsers.*;
+import org.w3c.dom.*;
+import org.xml.sax.SAXException;
 
 public class VotingResultsEncryption 
 {
+    public static String Mode;
+    public static String InFilePath;
+    public static String OutFilePath;
+    public static String Key;
+    public static File InFile;
+    public static File OutFile;
+    
     public static void main(String[] args) 
-            throws FileNotFoundException
+            throws FileNotFoundException,SAXException
     {
-        String inFilePath = args[0];
-        String outFilePath = args[1];
-        String key = args[2];
-        File inFile = new File(inFilePath);
-        File outFile = new File(outFilePath);
+        try
+        {
+            //Checks for valid number of args
+            if(args.length != 2 && args.length != 4)
+            {
+                throw new IllegalArgumentException();
+            }
+            else if(args.length >=2)
+            {
+                Mode = args[0].toLowerCase();
+                InFilePath = args[1];
+                InFile = new File(InFilePath);
+                if(args.length == 4)
+                {
+                    OutFilePath = args[2];
+                    Key = args[3];
+                    OutFile = new File(OutFilePath);
+                }
+            }
         
-        System.out.printf("this is a test input key as first arg and remove hard coded test key");
-        System.out.print(inFilePath);
-        encrypt("1111111111876789",
-                inFile,outFile);
-        
+            if(Mode.equals("encrypt"))
+            {
+                System.out.println("Encrypting " + InFile +" with key: "+ Key+ " outputting to "+OutFile);
+                encrypt(Key,InFile, OutFile);
+            }
+            else if (Mode.equals("decrypt"))
+            {
+                System.out.println("Decrypting " + InFile +" with key: "+ Key+ " outputting to "+OutFile);
+                decrypt(Key,InFile, OutFile);
+            }
+            else if (Mode.equals("count"))
+            {
+                count(InFile);
+            }
+            else
+            {
+                throw new IllegalArgumentException();
+            }
+        }
+        catch(IllegalArgumentException ex)
+        {
+            System.out.println( "VotingResultsEncryption \n"
+                              + "Either <encrypt|decrypt> <InFile> <OutFile> <16 digit Key>\n"
+                              + "Or     <count> <InXMLFile> <OutFile>");
+            System.exit(1);
+        }
     }
 
     private static void encrypt(String inKey, File inFile, File outFile) 
-            throws FileNotFoundException
     {
         try
         {
@@ -67,13 +106,52 @@ public class VotingResultsEncryption
                 | InvalidKeyException | IOException 
                 | IllegalBlockSizeException| BadPaddingException ex)
         {
-               System.out.println(ex);
+               System.out.println(ex.fillInStackTrace());
         }
-        
     }
     
-    private static void decrypt(String key, String inFile, String outFile)
+    private static void decrypt(String inKey, File inFile, File outFile)
     {
+        try
+        {
+            Key key = new SecretKeySpec(inKey.getBytes(),"AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            cipher.init(Cipher.DECRYPT_MODE, key);
+            
+            FileInputStream inputStream = new FileInputStream(inFile);
+            byte[] inputBytes = new byte[(int) inFile.length()];
+            inputStream.read(inputBytes);
+            byte[] outputBytes = cipher.doFinal(inputBytes);
+            
+            FileOutputStream outputStream = new FileOutputStream(outFile);
+            outputStream.write(outputBytes);
+            
+            inputStream.close();
+            outputStream.close();
+        }
+        catch(NoSuchPaddingException | NoSuchAlgorithmException
+                | InvalidKeyException | IOException 
+                | IllegalBlockSizeException| BadPaddingException ex)
+        {
+               System.out.println(ex.fillInStackTrace());
+        }
+    }
+    
+    //This method is not complete
+    private static void count(File xmlFile)
+            throws SAXException
+    {
+        try
+        {
+            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            Document xmlFileInstance = docBuilder.parse(xmlFile);
         
+            xmlFileInstance.getDocumentElement().getNodeName();
+        }
+        catch (IOException | ParserConfigurationException ex)
+        {
+            System.out.println(ex.fillInStackTrace());
+        }
     }
 }
