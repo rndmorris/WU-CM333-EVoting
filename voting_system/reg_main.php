@@ -180,7 +180,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="email">*First Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="fname" name='fname' placeholder="Enter first name"
+        <input type="text" class="form-control" id="fname" name='fname' placeholder="Enter first name" required
           <?php   if (isset($_SESSION['ses_fname'])){
           echo 'value="', $_SESSION['ses_fname'], '"';
           echo " required";
@@ -202,7 +202,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="lname">*Last Name:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="lname" name='lname' placeholder="Enter last name"
+        <input type="text" class="form-control" id="lname" name='lname' placeholder="Enter last name" required
           <?php   if (isset($_SESSION['ses_lname'])){
           echo 'value="', $_SESSION['ses_lname'], '"';
           echo " required";
@@ -232,7 +232,7 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="dob">*Date of Birth (MMDDYYYY):</label>
       <div class="col-sm-10">
-        <input type="date" pattern="[0-9]{8}" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MMDDYYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MMDDYYYY)" required
           <?php   if (isset($_SESSION['ses_dob'])){
           echo 'value="', $_SESSION['ses_dob'], '"';
           echo " required";
@@ -260,7 +260,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_num">*Driver's License Number:</label>
       <div class="col-sm-10">
-        <input type="text" pattern="[Kk][0-9]{8}" class="form-control" id="dl_num" name="dl_num" placeholder="K12345678"          
+        <input type="text" pattern="[Kk][0-9]{8}" class="form-control" id="dl_num" name="dl_num" placeholder="K12345678" required          
           <?php   if (isset($_SESSION['ses_dl_num'])){
             echo 'value="', $_SESSION['ses_dl_num'], '"';
             echo " required";
@@ -271,7 +271,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_iss">*Date your driver's lisence was issued:</label>
       <div class="col-sm-10">
-        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_iss" name="dl_iss" placeholder="Enter issue date (MMDDYYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_iss" name="dl_iss" placeholder="Enter issue date (MMDDYYYY)" required
           <?php   if (isset($_SESSION['ses_dl_iss'])){
             echo 'value="', $_SESSION['ses_dl_iss'], '"';
             echo " required";
@@ -283,7 +283,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_exp">*Date your driver's lisence expires:</label>
       <div class="col-sm-10">
-        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_exp" name="dl_exp" placeholder="Enter expiration date (MMDDYYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_exp" name="dl_exp" placeholder="Enter expiration date (MMDDYYYY)" required
           <?php   if (isset($_SESSION['ses_dl_exp'])){
           echo 'value="', $_SESSION['ses_dl_exp'], '"';
           echo " required";
@@ -295,7 +295,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_add">*Address as it appears on your driver's lisence:</label>
       <div class="col-sm-10">
-        <input type="text" pattern="[ A-Za-z\.\'\-,]+" class="form-control" id="dl_add" name="dl_add" placeholder="Address on driver's licence"
+        <input type="text" pattern="[ A-Za-z\.\'\-,]+" class="form-control" id="dl_add" name="dl_add" placeholder="Address on driver's licence" required
           <?php   if (isset($_SESSION['ses_dl_add'])){
           echo 'value="', $_SESSION['ses_dl_add'], '"';
           echo " required";
