@@ -3,9 +3,6 @@
 package votingresultsencryption;
 
 import java.io.*;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -15,8 +12,6 @@ import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
-import javax.xml.parsers.*;
-import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 
 public class VotingResultsEncryption 
@@ -61,10 +56,6 @@ public class VotingResultsEncryption
                 System.out.println("Decrypting " + InFile +" with key: "+ Key+ " outputting to "+OutFile);
                 decrypt(Key,InFile, OutFile);
             }
-            else if (Mode.equals("count"))
-            {
-                count(InFile);
-            }
             else
             {
                 throw new IllegalArgumentException();
@@ -73,8 +64,7 @@ public class VotingResultsEncryption
         catch(IllegalArgumentException ex)
         {
             System.out.println( "VotingResultsEncryption \n"
-                              + "Either <encrypt|decrypt> <InFile> <OutFile> <16 digit Key>\n"
-                              + "Or     <count> <InXMLFile> <OutFile>");
+                              + "<encrypt|decrypt> <InFile> <OutFile> <16 digit Key>");
             System.exit(1);
         }
     }
@@ -134,24 +124,6 @@ public class VotingResultsEncryption
                 | IllegalBlockSizeException| BadPaddingException ex)
         {
                System.out.println(ex.fillInStackTrace());
-        }
-    }
-    
-    //This method is not complete
-    private static void count(File xmlFile)
-            throws SAXException
-    {
-        try
-        {
-            DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
-            Document xmlFileInstance = docBuilder.parse(xmlFile);
-        
-            xmlFileInstance.getDocumentElement().getNodeName();
-        }
-        catch (IOException | ParserConfigurationException ex)
-        {
-            System.out.println(ex.fillInStackTrace());
         }
     }
 }
