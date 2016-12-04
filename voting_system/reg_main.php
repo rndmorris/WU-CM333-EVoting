@@ -230,7 +230,7 @@
     </br>
 
      <div class="form-group">
-      <label class="control-label col-sm-2" for="dob">*Date of Birth (MM/DD/YYYY):</label>
+      <label class="control-label col-sm-2" for="dob">*Date of Birth (MMDDYYYY):</label>
       <div class="col-sm-10">
         <input type="date" pattern="[0-9]{8}" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MMDDYYYY)"
           <?php   if (isset($_SESSION['ses_dob'])){
@@ -260,7 +260,7 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_num">*Driver's License Number:</label>
       <div class="col-sm-10">
-        <input type="text" pattern="K[0-9]{8}" class="form-control" id="dl_num" name="dl_num" placeholder="Kxxxxxxxx"          
+        <input type="text" pattern="[Kk][0-9]{8}" class="form-control" id="dl_num" name="dl_num" placeholder="K12345678"          
           <?php   if (isset($_SESSION['ses_dl_num'])){
             echo 'value="', $_SESSION['ses_dl_num'], '"';
             echo " required";
