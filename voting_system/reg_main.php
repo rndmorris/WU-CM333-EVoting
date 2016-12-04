@@ -52,13 +52,14 @@
 
     <div class="form-group">
     	<div class="text_box">
+	<p>*=required field</p>
     	<p><strong>STEP 1 OF 4) </strong><br>VERIFY YOUR VOTING ELIGIBILITY<br></p>
       </div>
     </div>
   	<br>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="cit">1. Are you a citizen of the United States of America?</label>
+    	<label class="control-label col-sm-6" for="cit">*1. Are you a citizen of the United States of America?</label>
     	<div class="col-sm-6">
    	    <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_yes"
 
@@ -68,7 +69,7 @@
             }
           }?>
 
-          >Yes</label>
+          required >Yes</label>
   	   <label class="radio-inline"><input type="radio" id='cit' name="cit" value="cit_no"
 
 
@@ -78,12 +79,12 @@
             }
           }?>
 
-        >No</label>
+        required >No</label>
   	  </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="age">2. Will you be 18 years of age on or before election day?</label>
+    	<label class="control-label col-sm-6" for="age">*2. Will you be 18 years of age on or before election day?</label>
     	<div class="col-sm-6">
    	    <label class="radio-inline"><input type="radio" name="age" value="age_yes"
 
@@ -93,7 +94,7 @@
             }
           }?>
 
-          >Yes</label>
+          required >Yes</label>
   	    <label class="radio-inline"><input type="radio" name="age" value="age_no"
 
           <?php   if (isset($_SESSION['ses_age'])){
@@ -102,12 +103,12 @@
             }
           }?>
 
-          >No</label>
+          required >No</label>
   	  </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="kan_res">3. Are you a resident of Kansas?</label>
+    	<label class="control-label col-sm-6" for="kan_res">*3. Are you a resident of Kansas?</label>
     	 <div class="col-sm-6">
    	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_yes"
 
@@ -117,7 +118,7 @@
             }
           }?>
 
-          >Yes</label>
+          required >Yes</label>
   	    <label class="radio-inline"><input type="radio" name="kan_res" value="res_no"
 
 
@@ -127,12 +128,12 @@
             }
           }?>
 
-          >No</label>
+          required >No</label>
   	   </div>
     </div>
 
     <div class="form-group">
-    	<label class="control-label col-sm-6" for="fel">4. Felony Conviction - Please Choose One:</label>
+    	<label class="control-label col-sm-6" for="fel">*4. Felony Conviction - Please Choose One:</label>
     	<div class="col-sm-6">
    	    <label class="radio-inline"><input type="radio" name="fel" value="fel_never"
 
@@ -142,7 +143,7 @@
             }
           }?>
 
-          >I have never been convicted of a felony.</label>
+          required >I have never been convicted of a felony.</label>
    	    <br>
   	     <label class="radio-inline"><input type="radio" name="fel" value="fel_rest"
 
@@ -152,7 +153,7 @@
             }
           }?>
 
-          >I have been convicted of a felony. All the terms of my sentence have been completed and my rights have been restored.</label>
+          required >I have been convicted of a felony. All the terms of my sentence have been completed and my rights have been restored.</label>
   	     <br>
   	     <label class="radio-inline"><input type="radio" name="fel" value="fel_yes"
 
@@ -162,7 +163,7 @@
             }
           }?>
 
-          >I am currently under sentence for a felony.</label>
+          required >I am currently under sentence for a felony.</label>
   	     <br>
       </div>
     </div>
@@ -182,7 +183,7 @@
         <input type="text" class="form-control" id="fname" name='fname' placeholder="Enter first name"
           <?php   if (isset($_SESSION['ses_fname'])){
           echo 'value="', $_SESSION['ses_fname'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -204,7 +205,7 @@
         <input type="text" class="form-control" id="lname" name='lname' placeholder="Enter last name"
           <?php   if (isset($_SESSION['ses_lname'])){
           echo 'value="', $_SESSION['ses_lname'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -231,10 +232,10 @@
      <div class="form-group">
       <label class="control-label col-sm-2" for="dob">*Date of Birth (MM/DD/YYYY):</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MM/DD/YYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dob" name="dob" placeholder="Enter date of birth (MMDDYYYY)"
           <?php   if (isset($_SESSION['ses_dob'])){
           echo 'value="', $_SESSION['ses_dob'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -257,10 +258,10 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_num">*Driver's License Number:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="dl_num" name="dl_num" placeholder="Kxx-xx-xxxx"          
+        <input type="text" pattern="K[0-9]{8}" class="form-control" id="dl_num" name="dl_num" placeholder="Kxxxxxxxx"          
           <?php   if (isset($_SESSION['ses_dl_num'])){
             echo 'value="', $_SESSION['ses_dl_num'], '"';
-            echo " ";
+            echo " required";
             }?>>
       </div>
     </div>
@@ -268,10 +269,10 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_iss">*Date your driver's lisence was issued:</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="dl_iss" name="dl_iss" placeholder="Enter issue date (MM/DD/YYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_iss" name="dl_iss" placeholder="Enter issue date (MMDDYYYY)"
           <?php   if (isset($_SESSION['ses_dl_iss'])){
             echo 'value="', $_SESSION['ses_dl_iss'], '"';
-            echo " ";
+            echo " required";
             }?>>
       </div>
     </div>
@@ -280,10 +281,10 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_exp">*Date your driver's lisence expires:</label>
       <div class="col-sm-10">
-        <input type="date" class="form-control" id="dl_exp" name="dl_exp" placeholder="Enter expiration date (MM/DD/YYYY)"
+        <input type="date" pattern="[0-9]{8}" class="form-control" id="dl_exp" name="dl_exp" placeholder="Enter expiration date (MMDDYYYY)"
           <?php   if (isset($_SESSION['ses_dl_exp'])){
           echo 'value="', $_SESSION['ses_dl_exp'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -292,10 +293,10 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="dl_add">*Address as it appears on your driver's lisence:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="dl_add" name="dl_add" placeholder="Address on driver's licence"
+        <input type="text" pattern="[ A-Za-z\.\'\-,]+" class="form-control" id="dl_add" name="dl_add" placeholder="Address on driver's licence"
           <?php   if (isset($_SESSION['ses_dl_add'])){
           echo 'value="', $_SESSION['ses_dl_add'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -311,10 +312,10 @@
     <div class="form-group">
       <label class="control-label col-sm-2" for="curr_add">*Current Address:</label>
       <div class="col-sm-10">
-        <input type="text" pattern="[ A-Za-z\.\'\-,]*" class="form-control" id="curr_add" name="curr_add" placeholder="Enter Current Address"
+        <input type="text" pattern="[ A-Za-z\.\'\-,]+" class="form-control" id="curr_add" name="curr_add" placeholder="Enter Current Address"
           <?php   if (isset($_SESSION['ses_curr_add'])){
           echo 'value="', $_SESSION['ses_curr_add'], '"';
-          echo " ";
+          echo " required";
           }?>>
       </div>
     </div>
@@ -335,7 +336,7 @@
         <div class="form-group">
       <label class="control-label col-sm-2" for="tele">Current Email Address:</label>
       <div class="col-sm-10">
-        <input type="email" class="form-control" id="email" name="email" placeholder="Enter Current Email Address"
+        <input type="email" pattern="[A-Za-z\.\-\+\@]+" class="form-control" id="email" name="email" placeholder="Enter Current Email Address"
           <?php   if (isset($_SESSION['ses_email'])){
           echo 'value="', $_SESSION['ses_email'], '"';
           echo " ";
