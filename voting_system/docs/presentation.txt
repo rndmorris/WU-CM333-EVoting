@@ -1,5 +1,8 @@
 presentation
 
+-sudo /etc/init.d/apache2 stop
+ -this is to stop any apache servers that may have become zombies.
+ 
 sudo /opt/lampp/lampp start
 
 mysql -h localhost -u root -p
