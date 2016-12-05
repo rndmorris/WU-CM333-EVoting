@@ -78,7 +78,7 @@
 
 	<div class="jumbotron text-center">
   <h1>Voter Registration</h1>
-    <p>Confirm your registration information</p>
+    <p>Please confirm your registration information.</p>
     <br>
     <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>

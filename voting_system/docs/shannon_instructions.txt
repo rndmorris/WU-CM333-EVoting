@@ -1,0 +1,5 @@
+shannon_instructions
+
+in /opt/lampp/htdocs/voting_system/xml
+
+java -jar VotingResultsEncryption.jar encrypt vote.xml secret.xml 1111222233334444

@@ -11,6 +11,44 @@
   <link rel="stylesheet" href="styles/styles.css" type="text/css"></link>
   <script src="scripts/jquery.js" type="text/javascript"></script>
 
+  <script>
+    $(function(){
+      $('input[name=cit]').click(function(){  
+        if($('input[name=cit]:checked').val() == "cit_no")  {
+          //alert($('input[name=cit]:checked').val());
+          alert("You must be a citizen to register!");
+          $('input[name=cit]').prop('checked', false);
+        }
+      });
+
+      $('input[name=age]').click(function(){  
+        if($('input[name=age]:checked').val() == "age_no")  {
+          //alert($('input[name=age]:checked').val());
+          alert("You must be 18 before the election in order to register!");
+          $('input[name=age]').prop('checked', false);
+        }
+      });
+
+      $('input[name=kan_res]').click(function(){  
+        if($('input[name=kan_res]:checked').val() == "res_no")  {
+         //alert($('input[name=kan_res]:checked').val());
+          alert("You must be a Kansas resident to register!");
+          $('input[name=kan_res]').prop('checked', false);
+        }
+      });
+
+      $('input[name=fel]').click(function(){  
+        if($('input[name=fel]:checked').val() == "fel_yes")  {
+          //alert($('input[name=fel]:checked').val());
+          alert("You can't be a felon and register to vote in Kansas!");
+          $('input[name=fel]').prop('checked', false);
+        }
+      });
+
+      });
+  </script>
+
+
 </head>
 
 <body>
@@ -78,7 +116,7 @@
             }
           }?>
 
-        required >No</label>
+        >No</label>
   	  </div>
     </div>
 
@@ -102,7 +140,7 @@
             }
           }?>
 
-          required >No</label>
+           >No</label>
   	  </div>
     </div>
 
@@ -127,7 +165,7 @@
             }
           }?>
 
-          required >No</label>
+          >No</label>
   	   </div>
     </div>
 
@@ -162,7 +200,7 @@
             }
           }?>
 
-          required >I am currently under sentence for a felony.</label>
+           >I am currently under sentence for a felony.</label>
   	     <br>
       </div>
     </div>

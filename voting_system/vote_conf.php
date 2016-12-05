@@ -38,7 +38,6 @@
         //header("Location: http://www.google.com");
         exit;
       }
-
       for($k = 0; $k < 100; $k++){
            $j = strval($k);
            $j = 'wi_r'.$j;
@@ -77,7 +76,7 @@
 
 	<div class="jumbotron text-center">
   <h1>Vote Confirmation</h1>
-    <p>Is this really what you meant, stupid?</p>
+    <p>Are these the votes you want to place?</p>
       <br>
   <div><a href="index.php"><img src="images/home.png" alt="home" style="width: 50px; height: 50px;"></a></div>
   </div>
@@ -130,9 +129,9 @@
         $scopeCnt2 = $xml->ballot[$district]->scopes->scope->count();
         echo '<br>';
         for( $sc = 0; $sc < $scopeCnt2; $sc++) {
-        echo '<h4>';
-        echo $xml->ballot[$district]->scopes->scope[$sc]->scope_name;
-        echo '</h4>';
+        //echo '<h4>';
+        //echo $xml->ballot[$district]->scopes->scope[$sc]->scope_name;
+        //echo '</h4>';
         $raceCnt2 = $xml->ballot[$district]->scopes->scope[$sc]->races->race->count();
      		for($t = 0; $t < $raceCnt2; $t++)
      		{
@@ -145,31 +144,49 @@
             echo '<label class="control-label col-sm-4">';
             echo $temp_racenm;
             echo ': </label>';
+            //echo 'OUTSIDE!   ';
      				$candCnt2 = $xml->ballot[$district]->scopes->scope->races->race[$t]->candidate->count();
      				for($n = 0; $n < $candCnt2; $n++)
      				{
-     					/*echo 'n ', $n;
-     					echo 'in second for';*/
+     					//echo '   n;   ', $n;
+     					/*echo ' in second for';*/
               //echo '<div class="col-sm-5"';
      					$temp_id = $xml->ballot[$district]->scopes->scope[$sc]->races->race[$t]->candidate[$n]->id;
-     					if($temp_id != $_SESSION[$r])
+              //echo ' tempID: '.$temp_id;
+              //echo '';
+              //echo ' sessR: '.$_SESSION[$r].'    ';
+     					if($temp_id == $_SESSION[$r])
+              //if (substr( $_SESSION[$r], 0, 1 ) != "_")
      					{
                // echo '<div class="col-sm-5"';
+              //echo ' first if: ';
+              //echo $_SESSION[$r];
+              //break;
      					echo $xml->ballot[$district]->scopes->scope[$sc]->races->race[$t]->candidate[$n]->name;
+              $writeInClear = 'wi_'.$r;
+              unset($_SESSION[$writeInClear]);
+              break;
               //echo '</div>';
      					}
-              else{ 
+              //else{ 
+              if (substr( $_SESSION[$r], 0, 1 ) != "_"){
                 //echo '<div class="col-sm-5"';
-                if (substr( $_SESSION[$r], 0, 1 ) != "_"){
-                echo $_SESSION[$r];}
+                //if (substr( $_SESSION[$r], 0, 1 ) != "_"){
+                //echo ' In 2nd if:   ';
+                echo $_SESSION[$r];
+                break;
+                //echo $temp_id;
+               // echo $xml->ballot[$district]->scopes->scope[$sc]->races->race[$t]->candidate[$n]->name;
+                //break;
                 //echo '</div>';
               }
               //echo '</div>';
      				}
      			}
-
+          //unset($_POST[$r]);
 
      		}
+        $dummy = $sc+1;
       }
      		/*echo xml_attribute($xml->ballot[$district]->scopes->scope[$scope]->races->race[$r]->candidate, $_SESSION[$r]);*/
      		/*$name = $xml->ballot[$district]->scopes->scope[$scope]->races->race[$r]->candidate->id[$_SESSION[$r]]->name;*/

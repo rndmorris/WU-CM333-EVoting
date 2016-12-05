@@ -13,12 +13,12 @@
             <race_id>r1</race_id>
             <write_in>yes</write_in>
             <candidate>
-              <name>Ms. Coder</name>
+              <name>Ms. Sandra Coder</name>
               <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Shannon Hoffman</name>
+              <name>Shannon "Hip Hop" Hoffman</name>
               <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
@@ -33,13 +33,13 @@
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Dr. Bill</name>
+              <name>Dr. Bill Morrison</name>
               <id>_c4</id>
-              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+              <party>Democrat</party>
             </candidate>
           </race>
           <race>
-            <race_name>House</race_name>
+            <race_name>House of Representatives</race_name>
             <race_id>r3</race_id>
             <write_in>yes</write_in>
             <candidate>
@@ -50,7 +50,58 @@
             <candidate>
               <name>Salvador Lopez</name>
               <id>_c6</id>
-              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+        </races>
+      </scope>
+      <scope>
+        <scope_name>State</scope_name>
+        <scope_id>s2</scope_id>
+        <races>
+          <race>
+            <race_name>Governor</race_name>
+            <race_id>r4</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Sam Brownback</name>
+              <id>_c7</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Dame Judi Dench</name>
+              <id>_c8</id>
+              <party>N/A</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Senate</race_name>
+            <race_id>r5</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>John Carp</name>
+              <id>_c9</id>
+              <party>Unified Underwater Utopianist</party>
+            </candidate>
+            <candidate>
+              <name>Dr. Jennifer Thomas</name>
+              <id>_c10</id>
+              <party>Anarcho-Pescatarian</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Representative</race_name>
+            <race_id>r6</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Ben Ciummo</name>
+              <id>_c11</id>
+              <party>Line-Dancer Syndicalist</party>
+            </candidate>
+            <candidate>
+              <name>Jennifer Shoemaker</name>
+              <id>_c12</id>
+              <party>Green Party</party>
             </candidate>
           </race>
         </races>
@@ -70,12 +121,12 @@
             <race_id>r1</race_id>
             <write_in>yes</write_in>
             <candidate>
-              <name>Ms. Coder</name>
+              <name>Ms. Sandra Coder</name>
               <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Shannon Hoffman</name>
+              <name>Shannon "Hip Hop" Hoffman</name>
               <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
@@ -90,9 +141,75 @@
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Dr. Bill</name>
+              <name>Dr. Bill Morrison</name>
               <id>_c4</id>
-              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>House of Representatives</race_name>
+            <race_id>r3</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Aaron Morris</name>
+              <id>_c5</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Salvador Lopez</name>
+              <id>_c6</id>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+        </races>
+      </scope>
+      <scope>
+        <scope_name>State</scope_name>
+        <scope_id>s2</scope_id>
+        <races>
+          <race>
+            <race_name>Governor</race_name>
+            <race_id>r4</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Sam Brownback</name>
+              <id>_c7</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Dame Judi Dench</name>
+              <id>_c8</id>
+              <party>N/A</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Senate</race_name>
+            <race_id>r5</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>John Carp</name>
+              <id>_c9</id>
+              <party>Unified Underwater Utopianist</party>
+            </candidate>
+            <candidate>
+              <name>Dr. Jennifer Thomas</name>
+              <id>_c10</id>
+              <party>Anarcho-Pescatarian</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Representative</race_name>
+            <race_id>r6</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Ben Ciummo</name>
+              <id>_c11</id>
+              <party>Line-Dancer Syndicalist</party>
+            </candidate>
+            <candidate>
+              <name>Jennifer Shoemaker</name>
+              <id>_c12</id>
+              <party>Green Party</party>
             </candidate>
           </race>
         </races>
@@ -112,12 +229,12 @@
             <race_id>r1</race_id>
             <write_in>yes</write_in>
             <candidate>
-              <name>Ms. Coder</name>
+              <name>Ms. Sandra Coder</name>
               <id>_c1</id>
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Shannon Hoffman</name>
+              <name>Shannon "Hip Hop" Hoffman</name>
               <id>_c2</id>
               <party>Minarchist Socialist Orthapedic Orthadontist</party>
             </candidate>
@@ -132,18 +249,82 @@
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Dr. Bill</name>
+              <name>Dr. Bill Morrison</name>
               <id>_c4</id>
-              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>House of Representatives</race_name>
+            <race_id>r3</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Aaron Morris</name>
+              <id>_c5</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Salvador Lopez</name>
+              <id>_c6</id>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+        </races>
+      </scope>
+      <scope>
+        <scope_name>State</scope_name>
+        <scope_id>s2</scope_id>
+        <races>
+          <race>
+            <race_name>Governor</race_name>
+            <race_id>r4</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Sam Brownback</name>
+              <id>_c7</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Dame Judi Dench</name>
+              <id>_c8</id>
+              <party>N/A</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Senate</race_name>
+            <race_id>r5</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>John Carp</name>
+              <id>_c9</id>
+              <party>Unified Underwater Utopianist</party>
+            </candidate>
+            <candidate>
+              <name>Dr. Jennifer Thomas</name>
+              <id>_c10</id>
+              <party>Anarcho-Pescatarian</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Representative</race_name>
+            <race_id>r6</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Ben Ciummo</name>
+              <id>_c11</id>
+              <party>Line-Dancer Syndicalist</party>
+            </candidate>
+            <candidate>
+              <name>Jennifer Shoemaker</name>
+              <id>_c12</id>
+              <party>Green Party</party>
             </candidate>
           </race>
         </races>
       </scope>
     </scopes>
  </ballot>
-
  <ballot>
-  
   <district>District 4</district>
     <scopes>
       <scope>
@@ -175,15 +356,79 @@
               <party>Republican</party>
             </candidate>
             <candidate>
-              <name>Dr. Boston Bill</name>
+              <name>Dr. Bill Morrison</name>
               <id>_c4</id>
-              <party>Minarchist Socialist Orthapedic Orthadontist</party>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>House</race_name>
+            <race_id>r3</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Aaron Morris</name>
+              <id>_c5</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Salvador Lopez</name>
+              <id>_c6</id>
+              <party>Democrat</party>
+            </candidate>
+          </race>
+        </races>
+      </scope>
+      <scope>
+        <scope_name>State</scope_name>
+        <scope_id>s2</scope_id>
+        <races>
+          <race>
+            <race_name>Governor</race_name>
+            <race_id>r4</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Sam Brownback</name>
+              <id>_c7</id>
+              <party>Republican</party>
+            </candidate>
+            <candidate>
+              <name>Dame Judi Dench</name>
+              <id>_c8</id>
+              <party>N/A</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Senate</race_name>
+            <race_id>r5</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>John Carp</name>
+              <id>_c9</id>
+              <party>Unified Underwater Utopianist</party>
+            </candidate>
+            <candidate>
+              <name>Dr. Jennifer Thomas</name>
+              <id>_c10</id>
+              <party>Anarcho-Pescatarian</party>
+            </candidate>
+          </race>
+          <race>
+            <race_name>State Representative</race_name>
+            <race_id>r6</race_id>
+            <write_in>yes</write_in>
+            <candidate>
+              <name>Ben Ciummo</name>
+              <id>_c11</id>
+              <party>Line-Dancer Syndicalist</party>
+            </candidate>
+            <candidate>
+              <name>Jennifer Shoemaker</name>
+              <id>_c12</id>
+              <party>Green Party</party>
             </candidate>
           </race>
         </races>
       </scope>
     </scopes>
  </ballot>
-
-
 </ballots>
