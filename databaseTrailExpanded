@@ -1,0 +1,143 @@
+import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.SQLXML;
+import java.sql.PreparedStatement;
+import java.io.*;
+
+public class DatabaseTrail_feed
+  { public static void main(String args[])
+          throws SQLException, FileNotFoundException 
+    { String user = "";
+      String pass = "";
+      String[] feedMe = new String[2]; String[] name = new String[2];
+       for(int v=0;v<feedMe.length;v++)
+          {feedMe[v]="";
+           name[v]="";}
+      String feed = "";
+      int attempts = 0;
+      boolean question = false;
+      boolean upQuery = false;
+      boolean selQuery = true;
+      Connection con = null;
+      Statement st = null;
+      ResultSet rs = null;
+      PreparedStatement insertToBase = null;
+      Scanner input = new Scanner(System.in);
+      
+      System.out.print("Location of file: \r\n");
+      String nameOfDoc=input.nextLine();
+      Scanner inFile=new Scanner(new File(nameOfDoc));      
+      
+      String url = "jdbc:mysql://localhost:3306/Registered"; 
+      System.out.print("User: ");
+      user = input.nextLine();
+      System.out.print("Pass: ");
+      pass = input.nextLine();
+      
+      do {
+           try{  con = DriverManager.getConnection(url, user, pass); }
+           catch (Exception ex)
+            { System.out.println(ex);
+              attempts++;
+              if (attempts >= 3)
+                {System.out.println("Too many errors");
+                 System.exit(0); }
+              }
+          if(attempts < 3)
+           {//System.out.println("connected");
+            break;}
+           }while(attempts <3);
+      
+      if(attempts <= 3)
+        { System.out.println("Execute a query."); }
+      
+      String query = "show databases;";
+      System.out.println("Execute show databases;");
+      
+      int columnNum;
+      while(!question)
+      {  columnNum = 1;
+         try {  
+              if(selQuery != false)
+                {  //System.out.println("You entered a selection");
+                   selQuery = false;
+                   st = con.createStatement(ResultSet.FETCH_UNKNOWN,
+                                            ResultSet.TYPE_SCROLL_INSENSITIVE);
+                   rs = st.executeQuery(query);
+                   //System.out.println("\r\n\nMetadata: "+rs.getMetaData() +"\r\n\n");
+
+                   System.out.println("Table name: "+rs.getMetaData().getTableName(1));
+
+                   while (rs.next())
+                    { String s = rs.getString(columnNum);
+                       if(rs.isFirst())
+                         { System.out.println("\nColumn name: "+rs.getMetaData().getColumnName(columnNum)); }
+                      System.out.print(s + " | ");
+                       if (rs.isLast())
+                          { columnNum++;  
+                            //System.out.println("I just added one");
+                            rs.beforeFirst();
+                            System.out.println("\r");}
+                     }
+              }
+             if(upQuery != false)
+               { //System.out.println("You entered a update");
+                   
+                int printLine = 0;
+                while (inFile.hasNext())
+                 {  feed = inFile.nextLine();
+                    //System.out.println("I am the grub: "+feed);
+                    feedMe = feed.split(",");
+                    name = feedMe[0].split(" ");
+                    System.out.println("\r\n FName:"+ name[0]+" lName:"+name[1]+" "+ feedMe[1]);
+                    System.out.println("I am updating the table;");
+                     insertToBase = con.prepareStatement(query);
+                     insertToBase.setString(1, name[0]);
+                     insertToBase.setString(2, name[1]);
+                     insertToBase.setString(3, feedMe[1]);
+                     insertToBase.executeUpdate();
+                    printLine++;
+                   }  
+                 upQuery = false;
+                   System.out.println(printLine +" entries");
+                   }
+                //System.out.println("don't execute");
+              }
+         catch (Exception ex)
+           { //debug info
+             System.out.println("\n"+ex);
+             System.out.println("The statement was -> "+query);
+             System.out.println("The column count was -> "+columnNum);}
+         
+        System.out.println("Do you have another command?: [Y/n]");
+        String ans = input.nextLine();
+       if(ans.equals("n"))
+         { System.out.println("Bye");
+           question = true; }
+       else if (ans.equals("Y"))
+          {System.out.println("What is your next Statement?: ");
+           query = input.nextLine();
+          
+            if (query.contains("insert"))
+               { System.out.println("execting update");
+                 upQuery = true;  }
+            else if (query.contains("select") || query.contains("show"))
+               { //System.out.println("executing selection");
+                 selQuery = true;  }
+            else 
+              { System.out.println("invaild input");
+                question = false;}
+          }
+       else
+          {System.out.println("Invaild input");
+           question = false;}
+       }
+      
+      System.out.println("You have exited the system.");
+      con.close();
+    }
+}
