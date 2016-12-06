@@ -91,7 +91,7 @@ public class xmlReader {
              } catch (Exception e) {
                     e.printStackTrace();}
 
-                       System.out.println("I hate netbeans\r\n");
+                       System.out.println("\r\nI hate netbeans\r\n");
                           for (int t=0; t<names.size();t++)
                               { if(names.get(t).contains("_"))
                                  { System.out.println("Number of votes for candidate: "+ mpCad.get( names.get(t) ) );
