@@ -9,7 +9,7 @@ For this project you need:
   4. A java installation updated to Java 8
   5. A web broswer
   
-***All of these criteria can be met my simply installing XAMPP (or the equivalent on your platform). Installing seperate version of PHP, MySQL, and Apache would also work, however installing XAMPP only takes a few minutes and can get this project up-and-running quickly.***
+***All of these criteria can be met my simply installing XAMPP (or the equivalent on your platform). Installing seperate versions of PHP, MySQL, and Apache would also work, however installing XAMPP only takes a few minutes and can get this project up-and-running quickly.***
 
 **Steps for getting started with voting:**
 1. Make sure that XAMPP (or the equivalent) is installed.
@@ -19,11 +19,11 @@ For this project you need:
 5. You can now cast a vote. Open up the "/xml/vote.xml" file to see the votes being added.
 
 **Steps for getting started with registering:**
-1. Start the MySQL database (by clicking the "start" button while mysql is highlighted in the XAMPP screen. Or if you have a seperate install of mysql running, something like: "mysql -h localhost -u root -p" should start it.
-2. The easiest way to play around with database parts(if you are using XAMPP) is to got to "http://localhost/dashboard/" and click on the phpMyAdmin at the top right-hand corner. If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into a mysql terminal.
+1. Start the MySQL database (by clicking the "start" button while mysql is highlighted in the XAMPP screen. Or if you have a  separate install of mysql running, something like: "mysql -h localhost -u root -p" should start it.
+2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" and click on the phpMyAdmin at the top right-hand corner. If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into a mysql terminal.
 3. Copy the contents of the "/voting_system/db/regdb.sql" into the sql query section of phpMyAdmin, or import the file under the import tab.
 4. The current "/voting_system/reg_end.php" is where the user and password are set up for the database (line 29). It currently uses the username "root" at "localhost" with no password, which is a default setting for XAMPP.
-5. Go to "localhost/voting_system" in a broswer and follow the registration path. The information should be added to the database once the form has been submitted. It can be checked in phpMyAdmin by looking under the 
+5. Go to "localhost/voting_system" in a browser and follow the registration path. The information should be added to the database once the form has been submitted. It can be checked in phpMyAdmin by looking under the 
 
 **Steps for encrypting the vote.xml file:**
 
