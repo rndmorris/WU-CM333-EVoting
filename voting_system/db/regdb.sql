@@ -1,4 +1,4 @@
-CREATE DABABASE registration;
+CREATE DATABASE registration;
 
 /* 
 WITHOUT THE DATE VARIABLES
