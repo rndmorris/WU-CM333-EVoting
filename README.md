@@ -15,7 +15,7 @@ For this project you need:
   1. Make sure that XAMPP (or the equivalent) is installed.
   2. Drag the "voting_system" directory to the "htdocs" folder in the main XAMPP directory.
   3. Change the permissions on the "/voting_system/xml/vote.xml" to the desired permission (we used the command 'chmod 777 
-  vote.xml'). This will allow votes to be added to the vote file.
+  vote.xml'). This will allow votes to be added to the vote file. (this part might now be necessary on your computer)
   4. Start a browser and type "localhost/voting_system" in the address bar.
   5. You can now cast a vote. Open up the "/xml/vote.xml" file to see the votes being added.
 
