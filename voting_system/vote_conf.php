@@ -143,8 +143,12 @@
      					}
               if (substr( $_SESSION[$r], 0, 1 ) != "_"){
 
+ 	      if(substr( $_SESSION[$r], 0, 3 ) != "wi_"){
                 echo $_SESSION[$r];
-                break;
+                break;}
+              else{
+                echo "";
+                break;}
 
               }
               
