@@ -29,5 +29,5 @@ For this project you need:
 
 **Steps for decrypting the vote.xml file:**
 
-**Steps for tallying the votes**
+**Steps for tallying the votes:**
 
