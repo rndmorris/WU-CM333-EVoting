@@ -24,7 +24,7 @@ For this project you need:
   have a  separate install of mysql running, something like: "mysql -h localhost -u root -p" should start it.
   2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" 
   and click on the phpMyAdmin tab at the top right-hand corner. This may vary depending on version. On windows in may be found 
-  at localhost/phpmyadmin If you are using a serpate install, simply copy the 
+  at "localhost/phpmyadmin" If you are using a serpate install, simply copy the 
   contents of "/voting_system/db/regdb.sql" into the mysql terminal.
   3. Copy the contents of the "/voting_system/db/regdb.sql" into the sql query section of phpMyAdmin, or import the file 
   under the import tab.
