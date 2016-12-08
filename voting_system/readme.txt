@@ -9,7 +9,9 @@ For this project you need:
   4. A java installation updated to Java 8
   5. A web broswer
   
-***All of these criteria can be met my simply installing XAMPP (or the equivalent on your platform). Installing seperate versions of PHP, MySQL, and Apache would also work, however installing XAMPP only takes a few minutes and can get this project up-and-running quickly.***
+***All of these criteria can be met my simply installing XAMPP (or the equivalent on your platform). 
+Installing seperate versions of PHP, MySQL, and Apache would also work, 
+however installing XAMPP only takes a few minutes and can get this project up-and-running quickly.***
 
 **Steps for getting started with voting:**
   1. Make sure that XAMPP (or the equivalent) is installed.
