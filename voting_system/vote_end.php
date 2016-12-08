@@ -22,32 +22,10 @@
     if ( file_exists('xml/ballot.xml') ) {
       $xml = simplexml_load_file('xml/ballot.xml');
 
-    //$filename = "vote.xml";
-
-    //$filename = new XMLWriter();
-    //$filename->openURI('vote.xml');
-    //$handle = fopen($filename, "a");
-
       $voteFile = new DOMDocument();
       $voteFile->load("xml/vote.xml");
       $voteFile->formatOutput = true;
       $voteRoot = $voteFile->getElementsByTagName('vote')->item(0);;
-
-
-
-    //$last = sizeof($filename) - 1 ; 
-   // unset($filename[$last]); 
-
-// write the new data to the file 
- //   $fp = fopen('filename.txt', 'w'); 
-    //$test = substr($filename, 0, strrpos(trim($filename), "\n"));
-    //echo $test;
-    //fwrite($fp, implode('', $filename)); 
-   // fwrite($handle, $test);
-
-
-
-    //$contents = fread($handle, filesize($filename));
 
 
       $scopesCnt = $xml->ballot[$_SESSION['district']]->scopes->count();
@@ -78,17 +56,6 @@
            //echo $j;
             if(isset($_SESSION[$j]))
             {
-              /*fwritev($handle, "<race>\n");
-              fwrite($handle, "      <race_id>");
-              fwrite($handle, $t);
-              fwrite($handle, "</race_id>\n");
-              fwrite($handle, "      <candidate>\n");
-              fwrite($handle, "          <name>");
-              fwrite($handle, $_SESSION[$j]);
-              fwrite($handle, "</name>\n");
-              fwrite($handle, "          <write_in>yes</write_in>\n");
-              fwrite($handle, "      </candidate>\n");
-              fwrite($handle, "</race>\n");*/
 
               $raceDOM = $voteRoot->appendChild($voteFile->createElement('race'));
               $raceIDDOM = $raceDOM->appendChild($voteFile->createElement('race_id'));
@@ -108,11 +75,7 @@
                     $raceID = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->race_id;
         
                       if(strcmp($raceID, $t) == 0){
-                        //echo "INNN!";
-                        //echo "RACE ID:    ";
-                        //echo $t;
-                        //echo "CandidateID?     ";
-                        //echo $_SESSION[$t];
+
                         for( $candidate = 0; $candidate < $candCnt; $candidate++ ){
                     $can_name = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->candidate[$candidate]->name;
                     $can_party = $xml->ballot[$_SESSION['district']]->scopes->scope[$scope]->races->race[$race]->candidate[$candidate]->party;
@@ -120,23 +83,6 @@
 
                           if(strcmp($_SESSION[$t], $can_id) == 0){
 
-                            /*fwrite($handle, "<race>\n");
-                            fwrite($handle, "      <race_id>");
-                            fwrite($handle, $t);
-                            fwrite($handle, "</race_id>\n");
-                            fwrite($handle, "      <candidate>\n");
-                            fwrite($handle, "          <name>");
-                            fwrite($handle, $can_name);
-                            fwrite($handle, "</name>\n");
-                            fwrite($handle, "          <id>");
-                            fwrite($handle, $can_id);
-                            fwrite($handle, "</id>\n");
-                            fwrite($handle, "          <party>");
-                            fwrite($handle, $can_party);
-                            fwrite($handle, "</party>\n");
-                            fwrite($handle, "          <write_in>no</write_in>\n");
-                            fwrite($handle, "      </candidate>\n");
-                            fwrite($handle, "</race>\n");*/
 
                             $raceDOM1 = $voteRoot->appendChild($voteFile->createElement('race'));
                             $raceIDDOM1 = $raceDOM1->appendChild($voteFile->createElement('race_id'));
