@@ -1,9 +1,15 @@
+
 CREATE DATABASE registration;
 
 /* 
 WITHOUT THE DATE VARIABLES
 USE THIS ONE FOR NOW
+
+DROP DATABASE registration;
+
 */
+
+use registration;
 
 CREATE TABLE voter (
 	fname VARCHAR(35) NOT NULL,
