@@ -24,10 +24,10 @@ For this project you need:
   have a  separate install of mysql running, something like: "mysql -h localhost -u root -p" should start it.
   2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" 
   and click on the phpMyAdmin tab at the top right-hand corner. This may vary depending on version. On windows in may be found 
-  at "localhost/phpmyadmin" If you are using a serpate install, simply copy the 
-  contents of "/voting_system/db/regdb.sql" into the mysql terminal.
+  at "localhost/phpmyadmin".
   3. Copy the contents of the "/voting_system/db/regdb.sql" into the sql query section of phpMyAdmin, or import the file 
-  under the import tab.
+  under the import tab. (If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into the 
+  mysql terminal.)
   4. The current "/voting_system/reg_end.php" is where the user and password are set up for the database (line 29). It 
   currently uses the username "root" at "localhost" with no password, which is a default setting for XAMPP.
   5. Go to "localhost/voting_system" in a browser and follow the registration path. The information should be added to the 
