@@ -31,37 +31,6 @@
     echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
 
-    //echo $mysqli->host_info . "\n";
-/*
-    $insert = $mysqli->query("INSERT INTO voter(fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) VALUES ($_SESSION['ses_fname'], 
-      $_SESSION['ses_mname'], 
-      $_SESSION['ses_lname'], 
-      $_SESSION['ses_n_suf'], 
-      $_SESSION['ses_dob'], 
-      $_SESSION['ses_dl_num'], 
-      $_SESSION['ses_dl_iss'], 
-      $_SESSION['ses_dl_exp'], 
-      $_SESSION['ses_dl_add'], 
-      $_SESSION['ses_curr_add'], 
-      $_SESSION['ses_tele'], 
-      $_SESSION['ses_email'])";
-    $insret->exectute(); */
-
-/*
-$sql = "INSERT INTO voter (fname, mname, lname, sname, dob, dlnum, dlissdate, dlexpdate, dladdress, curradd, telenum, email) 
-  VALUES ($_SESSION['ses_fname'], 
-    $_SESSION['ses_mname'], 
-    $_SESSION['ses_lname'], 
-    $_SESSION['ses_n_suf'], 
-    $_SESSION['ses_dob'], 
-    $_SESSION['ses_dl_num'], 
-    $_SESSION['ses_dl_iss'], 
-    $_SESSION['ses_dl_exp'], 
-    $_SESSION['ses_dl_add'], 
-    $_SESSION['ses_curr_add'], 
-    $_SESSION['ses_tele'], 
-    $_SESSION['ses_email'])";*/
-
 $x_fname = $_SESSION['ses_fname'];
 $x_mname = $_SESSION['ses_mname'];
 $x_lname = $_SESSION['ses_lname'];
