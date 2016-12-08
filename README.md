@@ -20,14 +20,27 @@ For this project you need:
 
 **Steps for getting started with registering:**
   1. Start the MySQL database (by clicking the "start" button while mysql is highlighted in the XAMPP screen. Or if you have a  separate install of mysql running, something like: "mysql -h localhost -u root -p" should start it.
-  2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" and click on the phpMyAdmin at the top right-hand corner. If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into a mysql terminal.
+  2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" and click on the phpMyAdmin tab at the top right-hand corner. If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into the mysql terminal.
   3. Copy the contents of the "/voting_system/db/regdb.sql" into the sql query section of phpMyAdmin, or import the file under the import tab.
   4. The current "/voting_system/reg_end.php" is where the user and password are set up for the database (line 29). It currently uses the username "root" at "localhost" with no password, which is a default setting for XAMPP.
   5. Go to "localhost/voting_system" in a browser and follow the registration path. The information should be added to the database once the form has been submitted. It can be checked in phpMyAdmin by looking under the registration database on the left-hand column.
 
 **Steps for encrypting the vote.xml file:**
 
+  1. Start a terminal window and enter the "/voting_system/xml" folder. 
+  You will probably use the command "cd /voting_system/xml" in the XMAPP directory to get there.
+  2. You will then execute the jar file inside that folder to encrypt the vote.xml file. The command you use looks    
+  something like this: "java -jar VotingResultsEncryption.jar encrypt vote.xml secret.xml 1111222233334444"
+  3. The arguments for this command represent the action that is being executed ("encrypt"), the file being encrypted 
+  ("vote.xml"), the output file ("secret.xml), and the 16 digit hash code ("1111222233334444"). Both the output file name   
+  and the hash code can be changed to the user's liking.
+  4. The output file can be opened in order to view the encrypted vote data.
+
 **Steps for decrypting the vote.xml file:**
+  1. You will start in the same directory that you did the encrypting and enter a command like: "java -jar    
+  VotingResultsEncryption.jar decrypt secret.xml test.xml 1111222233334444" where "secret.xml" is encrypted xml file and  
+  "test.xml" is the output file. The 16 digit encryption code needs to match the code given during encryption.
+  2. The output file can be opened in order to view the decrypted vote data.
 
 **Steps for tallying the votes:**
 
