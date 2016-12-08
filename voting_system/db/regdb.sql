@@ -26,7 +26,7 @@ CREATE TABLE voter (
 );
 
 
-/* WITH THE DATE VARIABLES*/
+/* WITH THE DATE VARIABLES
 
 CREATE TABLE voter (
 	fname VARCHAR(35) NOT NULL,
@@ -47,3 +47,4 @@ CREATE TABLE voter (
 	voterid INT(8) NOT NULL auto_increment,
 	PRIMARY KEY (voterid)
 );
+*/
