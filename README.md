@@ -23,7 +23,11 @@ For this project you need:
   2. The easiest way to play around with database parts(if you are using XAMPP) is to go to "http://localhost/dashboard/" and click on the phpMyAdmin at the top right-hand corner. If you are using a serpate install, simply copy the contents of "/voting_system/db/regdb.sql" into a mysql terminal.
   3. Copy the contents of the "/voting_system/db/regdb.sql" into the sql query section of phpMyAdmin, or import the file under the import tab.
   4. The current "/voting_system/reg_end.php" is where the user and password are set up for the database (line 29). It currently uses the username "root" at "localhost" with no password, which is a default setting for XAMPP.
-  5. Go to "localhost/voting_system" in a browser and follow the registration path. The information should be added to the database once the form has been submitted. It can be checked in phpMyAdmin by looking under the 
+  5. Go to "localhost/voting_system" in a browser and follow the registration path. The information should be added to the database once the form has been submitted. It can be checked in phpMyAdmin by looking under the registration database on the left-hand column.
 
 **Steps for encrypting the vote.xml file:**
+
+**Steps for decrypting the vote.xml file:**
+
+**Steps for tallying the votes**
 
