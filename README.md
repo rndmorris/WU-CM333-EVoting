@@ -4,7 +4,7 @@ Hello, thank you for looking at our project!
 
 For this project you need:
   1. A server running a web server (we used Apache)
-  2. The servers needs to be running MySQL
+  2. The servers needs to be running MySQL (or MariaDB in XAMPP)
   3. PHP running on that server
   4. A java installation updated to Java 8
   5. A web broswer
