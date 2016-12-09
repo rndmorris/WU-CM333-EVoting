@@ -52,7 +52,7 @@ For this project you need:
   and "test.xml" is the output file. The 16 digit encryption code needs to match the code given during encryption.
   2. The output file can be opened in order to view the decrypted vote data.
 
-**Steps for tallying the votes with XMLCounter:
+Steps for tallying the votes with XMLCounter:
 
   1. Locate the vote.xml file in the voting_system/xml directory.
   2. Copy the file location
