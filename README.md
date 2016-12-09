@@ -6,10 +6,10 @@ For this project you need:
   1. A server running a web server (we used Apache)
   2. The servers needs to be running MySQL (or MariaDB in XAMPP)
   3. PHP running on that server
-  4. A java installation updated to Java 8
+  4. A java installation updated to Java 8 with an IDE 
   5. A web broswer
   
-***All of these criteria can be met my simply installing XAMPP (or the equivalent on your platform). Installing seperate versions of PHP, MySQL, and Apache would also work, however installing XAMPP only takes a few minutes and can get this project up-and-running quickly.***
+*** All of these criteria can be met by simply installing XAMPP (or the equivalent on your platform). Installing seperate versions of PHP, MySQL, and Apache would also work, however installing XAMPP only takes a few minutes and can get this project up-and-running quickly. You'll also need a Java compiler. ***
 
 **Steps for getting started with voting:**
   1. Make sure that XAMPP (or the equivalent) is installed.
@@ -52,7 +52,7 @@ For this project you need:
   and "test.xml" is the output file. The 16 digit encryption code needs to match the code given during encryption.
   2. The output file can be opened in order to view the decrypted vote data.
 
-Steps for tallying the votes with XMLCounter:
+**Steps for tallying the votes with XMLCounter:**
 
   1. Locate the vote.xml file in the voting_system/xml directory.
   2. Copy the file location
