@@ -54,11 +54,13 @@ For this project you need:
 
 **Steps for tallying the votes with XMLCounter:**
 
-  1. Locate the vote.xml file in the voting_system/xml directory.
-  2. Note the file location
-  3. To open and compile the XMLCounter, you can either A) open the file located on the repository homepage and copy the text to your Java compiler or B) Locate the XMLCounter file within the unziped folder on your machine, open the file using a text editor, and then copy the text to your Java compiler.
-  4. Once compiled, the program will ask for the file location of vote.xml, paste the location at this time.
-  5. Successful execution will produce (with additional information):
+  1. Locate the vote.xml file in the /voting_system/xml directory.
+  2. In that folder, there is a jar file ("counter.jar") that can be executed just like the encrypt/decrypt file.
+  3. To execute the jar, enter the directory in the command line (for example, "cd /voting_system/xml") then enter the 
+  following command: "java -jar counter.jar"
+  4. Once you have done this, the program will ask for the file location of vote.xml, paste the location ("vote.xml") at 
+  this time.
+  5. Successful execution will produce something like(with additional information):
   
     Candidate with the most votes: Shannon Hoffman
     Victory with 24 votes.
