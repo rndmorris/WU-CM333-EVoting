@@ -46,10 +46,29 @@ For this project you need:
   4. The output file can be opened in order to view the encrypted vote data.
 
 **Steps for decrypting the vote.xml file:**
+  
   1. You will start in the same directory that you did the encrypting and enter a command like: "java -jar    
   VotingResultsEncryption.jar decrypt secret.xml test.xml 1111222233334444" where "secret.xml" is the encrypted xml file 
   and "test.xml" is the output file. The 16 digit encryption code needs to match the code given during encryption.
   2. The output file can be opened in order to view the decrypted vote data.
 
-**Steps for tallying the votes:**
+**Steps for tallying the votes with XMLCounter:
 
+  1. Locate the vote.xml file in the voting_system/xml directory.
+  2. Copy the file location
+  3. To open and compile the XMLCounter, you can either A) open the file located on the repository homepage and copy the text to your Java compiler or B) Locate the XMLCounter file within the unziped folder on your machine, open the file using a text editor, and then copy the text to your Java compiler.
+  4. Once file is compiled, the program will ask for the file location of vote.xml, paste the location at this time.
+  5. Successful execution will produce (with additional information):
+  
+    ----------------------------
+    
+    Candidate with the most votes: Shannon Hoffman
+    Victory with 24 votes.
+
+    Runner up candidate: Joe Blow
+    with 14 votes.
+
+    Third candidate: Dr. Bill
+    with 13 votes.
+
+    Shannon Hoffman beat Joe Blow by 10 votes.
