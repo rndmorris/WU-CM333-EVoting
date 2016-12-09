@@ -60,8 +60,6 @@ For this project you need:
   4. Once file is compiled, the program will ask for the file location of vote.xml, paste the location at this time.
   5. Successful execution will produce (with additional information):
   
-    ----------------------------
-    
     Candidate with the most votes: Shannon Hoffman
     Victory with 24 votes.
 
