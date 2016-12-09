@@ -57,7 +57,7 @@ For this project you need:
   1. Locate the vote.xml file in the voting_system/xml directory.
   2. Note the file location
   3. To open and compile the XMLCounter, you can either A) open the file located on the repository homepage and copy the text to your Java compiler or B) Locate the XMLCounter file within the unziped folder on your machine, open the file using a text editor, and then copy the text to your Java compiler.
-  4. Once file is compiled, the program will ask for the file location of vote.xml, paste the location at this time.
+  4. Once compiled, the program will ask for the file location of vote.xml, paste the location at this time.
   5. Successful execution will produce (with additional information):
   
     Candidate with the most votes: Shannon Hoffman
